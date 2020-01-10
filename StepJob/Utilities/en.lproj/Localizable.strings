@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  StepJob
+
+  Created by Jaji on 17.05.2019.
+  Copyright © 2019 Stepjob. All rights reserved.
+*/
+
+"login_title" = "StepJob'a giriş yap.";
+"login_nav" = "Giriş Yapın";
+"login" = "Giriş Yap";
+"forgot_password" = "Şifremi Unuttum";
+"e_mail" = "E-Mail";
+"password" = "Parola";
+"onboarding_title" = "İstediğiniz İş, İstediğiniz zaman";
+"create_new_account" = "Yeni Hesap Oluşturun";
+"stepjob_company_info" = "© 2019 StepJob Inc.";
+"ok" = "Ok";
+"employer_login_title" = "İşveren Girişi";

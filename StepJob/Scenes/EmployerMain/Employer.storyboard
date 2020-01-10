@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Employer Dashboard View Controller-->
+        <scene sceneID="7tu-R1-7WX">
+            <objects>
+                <viewController storyboardIdentifier="EmployerDashboardViewController" id="ZdH-jA-Hxe" customClass="EmployerDashboardViewController" customModule="StepJob" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CKb-3t-I1K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y9F-1I-Dxp">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Y9F-1I-Dxp" firstAttribute="top" secondItem="WY3-ax-fKV" secondAttribute="top" id="4ZE-Pf-FDZ"/>
+                            <constraint firstItem="Y9F-1I-Dxp" firstAttribute="leading" secondItem="WY3-ax-fKV" secondAttribute="leading" id="7Tr-LT-gZO"/>
+                            <constraint firstItem="WY3-ax-fKV" firstAttribute="trailing" secondItem="Y9F-1I-Dxp" secondAttribute="trailing" id="LPg-Ec-eEQ"/>
+                            <constraint firstItem="WY3-ax-fKV" firstAttribute="bottom" secondItem="Y9F-1I-Dxp" secondAttribute="bottom" id="Nvu-5F-RLi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WY3-ax-fKV"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Y9F-1I-Dxp" id="Njs-CF-jtY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ga2-W9-g4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="143" y="91"/>
+        </scene>
+        <!--Employer Job Detail View Controller-->
+        <scene sceneID="BA5-f7-Cw0">
+            <objects>
+                <viewController storyboardIdentifier="EmployerJobDetailViewController" id="UH4-oK-hnp" customClass="EmployerJobDetailViewController" customModule="StepJob" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dxW-Z9-Z6f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gfm-ry-JVF">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Anf-c8-OXe" firstAttribute="trailing" secondItem="gfm-ry-JVF" secondAttribute="trailing" id="QLn-pG-lgw"/>
+                            <constraint firstItem="gfm-ry-JVF" firstAttribute="leading" secondItem="Anf-c8-OXe" secondAttribute="leading" id="r6B-VK-XR4"/>
+                            <constraint firstItem="Anf-c8-OXe" firstAttribute="bottom" secondItem="gfm-ry-JVF" secondAttribute="bottom" id="uXR-5B-bpe"/>
+                            <constraint firstItem="gfm-ry-JVF" firstAttribute="top" secondItem="Anf-c8-OXe" secondAttribute="top" id="zZH-dd-JIF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Anf-c8-OXe"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="gfm-ry-JVF" id="agK-OM-V0R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oq5-jl-cbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1090.4000000000001" y="75.369458128078819"/>
+        </scene>
+    </scenes>
+</document>
