@@ -122,7 +122,7 @@ class OnboardingViewController: StandardViewController {
             questionLabel.text = "Çalışan mı arıyorsun?"
             questionButton.setTitle("İşveren olarak giriş yapın.", for: .normal)
         }
-        
+        isUserEmployer = isEmployer
     }
 
     func setTargets() {
@@ -145,7 +145,6 @@ class OnboardingViewController: StandardViewController {
         let vc = LoginViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
 extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource {

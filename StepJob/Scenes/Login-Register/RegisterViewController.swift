@@ -21,6 +21,9 @@ class RegisterViewController: StandardViewController {
     
     var scrollView = UIScrollView()
     
+    lazy var genderPickerView = UIPickerView()
+    let genders = ["", "Erkek", "Kadın"]
+    
     var submitButton = curvedButton(text: "HEMEN KAYDOL", color: UIColorFromRGB(0xff3f55))
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +38,23 @@ class RegisterViewController: StandardViewController {
     }
     
     func setInterface() {
-        addSlide()
+        
+        if isUserEmployer! {
+            mailField = TextFieldWithTrailerLine.init(title: "E-posta adresi", placeholder: "E-posta adresinizi giriniz")
+            companyField = TextFieldWithTrailerLine.init(title: "Firma Adı", placeholder: "Firmanızın/işletmenizin adını giriniz.")
+            areaField = TextFieldWithTrailerLine.init(title: "Çalışma Alanı", placeholder: "Firmanızın çalışma alanını belirtiniz.")
+            passwordField = TextFieldWithTrailerLine.init(title: "Şifre", placeholder: "En az 6 karakterden oluşan şifrenizi giriniz.", hasSecure: true)
+            passwordField2 = TextFieldWithTrailerLine.init(title: "Şifre tekrar", placeholder: "Şifrenizi tekrar giriniz", hasSecure: true)
+        } else {
+            mailField = TextFieldWithTrailerLine.init(title: "E-posta adresi", placeholder: "E-posta adresinizi giriniz")
+            companyField = TextFieldWithTrailerLine.init(title: "İsim Soyisim", placeholder: "Tam isminizi giriniz.")
+            areaField = TextFieldWithTrailerLine.init(title: "Cinsiyet", placeholder: "Cinsiyetinizi seçiniz")
+            areaField.textfield.inputView = genderPickerView
+            genderPickerView.delegate = self
+            passwordField = TextFieldWithTrailerLine.init(title: "Şifre", placeholder: "En az 6 karakterden oluşan şifrenizi giriniz.", hasSecure: true)
+            passwordField2 = TextFieldWithTrailerLine.init(title: "Şifre tekrar", placeholder: "Şifrenizi tekrar giriniz", hasSecure: true)
+        }
+        
         scrollView.contentSize = CGSize(width: getW(), height: getH() + 100)
         scrollView.backgroundColor = .white
         view.addSubview(scrollView)
@@ -50,7 +69,6 @@ class RegisterViewController: StandardViewController {
             make.top.equalTo(scrollView).offset(32)
         }
         
-        mailField = TextFieldWithTrailerLine.init(title: "E-posta adresi", placeholder: "E-posta adresinizi giriniz")
         mailField.lightTitle()
         addToolBar(textField: mailField.textfield)
         scrollView.addSubview(mailField)
@@ -61,7 +79,7 @@ class RegisterViewController: StandardViewController {
             make.height.equalTo(50)
         }
         
-        companyField = TextFieldWithTrailerLine.init(title: "Firma Adı", placeholder: "Firmanızın/işletmenizin adını giriniz.")
+        
         companyField.lightTitle()
         addToolBar(textField: companyField.textfield)
         scrollView.addSubview(companyField)
@@ -70,7 +88,7 @@ class RegisterViewController: StandardViewController {
             make.top.equalTo(mailField.snp.bottom).offset(24)
         }
         
-        areaField = TextFieldWithTrailerLine.init(title: "Çalışma Alanı", placeholder: "Firmanızın çalışma alanını belirtiniz.")
+        
         areaField.lightTitle()
         addToolBar(textField: areaField.textfield)
         scrollView.addSubview(areaField)
@@ -79,8 +97,6 @@ class RegisterViewController: StandardViewController {
             make.top.equalTo(companyField.snp.bottom).offset(24)
         }
         
-        passwordField = TextFieldWithTrailerLine.init(title: "Şifre", placeholder: "En az 6 karakterden oluşan şifrenizi giriniz.",
-                                                      hasSecure: true)
         passwordField.lightTitle()
         addToolBar(textField: passwordField.textfield)
         scrollView.addSubview(passwordField)
@@ -89,8 +105,6 @@ class RegisterViewController: StandardViewController {
             make.top.equalTo(areaField.snp.bottom).offset(24)
         }
         
-        passwordField2 = TextFieldWithTrailerLine.init(title: "Şifre tekrar", placeholder: "Şifrenizi tekrar giriniz",
-                                                       hasSecure: true)
         passwordField2.lightTitle()
         addToolBar(textField: passwordField2.textfield)
         scrollView.addSubview(passwordField2)
@@ -100,6 +114,7 @@ class RegisterViewController: StandardViewController {
         }
         
         scrollView.addSubview(submitButton)
+        submitButton.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         submitButton.snp.makeConstraints { (make) in
             make.left.right.equalTo(mailField)
             make.top.equalTo(passwordField2.snp.bottom).offset(40)
@@ -112,19 +127,63 @@ class RegisterViewController: StandardViewController {
     
     @objc func submitTapped() {
         
-//        let request = EmployerRegisterRequest()
-//        request.makeParameter(area: areaField.textfield.text ?? "",
-//                              email: mailField.textfield.text ?? "",
-//                              organization: companyField.textfield.text ?? "",
-//                              password: passwordField.textfield.text ?? "")
-//        
-//        WebService().employerRegister(parameters: request.parameters) { (response, error) in
-//            if !error {
-//                let response:EmployerRegisterResponse = Mapper<EmployerRegisterResponse>().map(JSONObject:response)
-//                
-//                
-//            }
-//        }
+        if isUserEmployer! {
+            
+            let request = EmployerRegisterRequest()
+            request.makeParameter(area: 0,
+                                  email: mailField.textfield.text ?? "",
+                                  organization: companyField.textfield.text ?? "",
+                                  password: passwordField.textfield.text ?? "")
+    
+            WebService().employerRegister(parameters: request.parameters) { (response, error) in
+                if !error {
+                    if let response:EmployerRegisterResponse = Mapper<EmployerRegisterResponse>().map(JSONObject:response) {
+                        print(response)
+                        let vc = EmployerTabBarController()
+                        self.navigationController?.setViewControllers([vc], animated: true)
+                    }
+                }
+            }
+            
+        } else {
+            
+        }
+        
+        let request = WorkerRegisterRequest()
+        request.makeParameter(email: mailField.textfield.text ?? "",
+                              fullName: companyField.textfield.text ?? "",
+                              password: passwordField.textfield.text ?? "",
+                              genderId: areaField.textfield.text == "ERKEK" ? 0 : 1)
+        WebService().workerRegister(parameters: request.parameters) { (response, error) in
+            if !error {
+                if let response: Worker = Mapper<Worker>().map(JSON: response) {
+                    print(response)
+                    let vc = MainViewController()
+                    self.navigationController?.setViewControllers([vc], animated: true)
+                    
+                }
+            }
+        }
         
     }
+}
+
+extension RegisterViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 3
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return genders[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        areaField.textfield.text = genders[row]
+    }
+    
+    
 }

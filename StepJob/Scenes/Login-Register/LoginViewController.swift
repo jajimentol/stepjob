@@ -114,8 +114,8 @@ class LoginViewController: StandardViewController {
     }
     
     @objc func forgotPasswordTapped() {
-        let vc = AdDescriptionViewController()
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = AdDescriptionViewController()
+//        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

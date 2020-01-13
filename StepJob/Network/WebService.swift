@@ -11,8 +11,8 @@ import SVProgressHUD
 import ObjectMapper
 
 struct baseURL {
-    static let prod = "http://stepjob.eu-central-1.elasticbeanstalk.com/"
-    static let test = "http://stepjob.eu-central-1.elasticbeanstalk.com/"
+    static let prod = "http://stepjobapi.eu-central-1.elasticbeanstalk.com/"
+    static let test = "stepjobapi.eu-central-1.elasticbeanstalk.com/"
 }
 
 class WebService: NSObject {
@@ -20,7 +20,15 @@ class WebService: NSObject {
     let baseUrl:String = baseURL.prod
 
     func employerRegister(parameters:[String:AnyObject], complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "employer/register"
+        let url = baseUrl + "employers/register"
+        SVProgressHUD.show()
+        self.startRequest(.post, parameters: parameters, urlStr: url) { (response, isNull) in
+            complete(response, isNull)
+        }
+    }
+    
+    func workerRegister(parameters:[String:AnyObject], complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
+        let url = baseUrl + "workers/register"
         SVProgressHUD.show()
         self.startRequest(.post, parameters: parameters, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -28,7 +36,7 @@ class WebService: NSObject {
     }
     
     func employerLogin(parameters:[String:AnyObject], complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "employer/login"
+        let url = baseUrl + "employers/login"
         SVProgressHUD.show()
         self.startRequest(.post, parameters: parameters, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -211,8 +219,6 @@ class WebService: NSObject {
             complete(response, isNull)
         }
     }
-    
-    
     
     func startRequest(_ method:Alamofire.HTTPMethod, parameters:Parameters, urlStr:String, completionHandler: @escaping ([String:AnyObject],Bool) -> ())-> () {
         

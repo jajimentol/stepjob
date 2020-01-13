@@ -12,8 +12,8 @@ class EmployerRegisterRequest: NSObject {
     
     var parameters: [String:AnyObject] = [:]
     
-    func makeParameter(area:String, email:String, organization: String, password: String) -> [String:AnyObject] {
-        self.parameters["activityArea"] = area as AnyObject
+    func makeParameter(area:Int, email:String, organization: String, password: String) -> [String:AnyObject] {
+        self.parameters["activityAreaId"] = area as AnyObject
         self.parameters["email"] = email as AnyObject
         self.parameters["organizationName"] = organization as AnyObject
         self.parameters["password"] = password as AnyObject
