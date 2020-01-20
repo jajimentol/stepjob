@@ -15,3 +15,7 @@ var userToken: String? {
         UserDefaults.standard.set(newValue, forKey: "sj-token")
     }
 }
+
+var employerUser: Employer?
+
+var workerUser: Worker?

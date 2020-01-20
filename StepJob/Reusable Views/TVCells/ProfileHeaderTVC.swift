@@ -10,15 +10,19 @@ import UIKit
 
 class ProfileHeaderTVC: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var activeAdsLabel: UILabel!
+    @IBOutlet weak var passiveAdsLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        if isUserEmployer! {
+            nameLabel.text = employerUser?.organizationName
+            activeAdsLabel.text = String(employerUser?.activeJobCount ?? 0)
+            passiveAdsLabel.text = String(employerUser?.passiveJobCount ?? 0)
+        }
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
 }

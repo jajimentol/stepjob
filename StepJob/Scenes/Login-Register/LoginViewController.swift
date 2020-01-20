@@ -100,6 +100,7 @@ class LoginViewController: StandardViewController {
             WebService().employerLogin(parameters: parameters) { (response, error) in
                 if !error {
                     if let employer = Mapper<Employer>().map(JSON: response) {
+                        employerUser = employer
                         let vc = EmployerTabBarController()
                         self.navigationController?.setViewControllers([vc], animated: true)
                     }
