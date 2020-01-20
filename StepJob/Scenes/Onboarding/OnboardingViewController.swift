@@ -129,6 +129,8 @@ class OnboardingViewController: StandardViewController {
         questionButton.addTarget(self, action: #selector(questionTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         signupButton.addTarget(self, action: #selector(signupTapped), for: .touchUpInside)
+        
+        UserDefaults.standard.set("", forKey: "sj-token")
     }
     
     @objc func questionTapped() {

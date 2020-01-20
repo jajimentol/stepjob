@@ -60,7 +60,6 @@ extension EmployerJobDetailViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = MyProfileViewController(nibName: "MyProfileViewController", bundle: nil)
-        vc.isEmployer = true
         navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -93,19 +93,16 @@ class LoginViewController: StandardViewController {
     
     @objc func loginTapped() {
         
-        let parameters = ["email" : emailField.textfield.text as AnyObject,
+        let parameters = ["email" : emailField.textfield.text?.lowercased() as AnyObject,
                           "password" : passwordField.textfield.text as AnyObject]
         
         if isUserEmployer! {
             WebService().employerLogin(parameters: parameters) { (response, error) in
                 if !error {
-                    if let emplyer = Mapper<Employer>().map(JSON: response) {
-                        
+                    if let employer = Mapper<Employer>().map(JSON: response) {
+                        let vc = EmployerTabBarController()
+                        self.navigationController?.setViewControllers([vc], animated: true)
                     }
-                    let vc = EmployerTabBarController()
-                    self.navigationController?.setViewControllers([vc], animated: true)
-                } else {
-                    
                 }
             }
         } else {
@@ -113,8 +110,6 @@ class LoginViewController: StandardViewController {
                 if !error {
                     let vc = MainViewController()
                     self.navigationController?.setViewControllers([vc], animated: true)
-                } else {
-                    
                 }
             }
         }

@@ -50,22 +50,38 @@
             endingLineNumber = "29"
             landmarkName = "Worker"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6C207F27-6494-436E-9354-172EDC69D07B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StepJob/Scenes/EmployeeMain/MyProfileViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "setInterface()"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C7A6891F-4E47-462D-99C9-E08B1F468BF1 - 6c05ae44dfa072ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StepJob.Worker.__allocating_init(map: ObjectMapper.Map) -&gt; Swift.Optional&lt;StepJob.Worker&gt;"
+                  moduleName = "StepJob"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sirius/Documents/GitHub/stepjob/StepJob/Network/Data/Worker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "C7A6891F-4E47-462D-99C9-E08B1F468BF1 - bf42e0c7c99fcf86"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StepJob.Worker.init(map: ObjectMapper.Map) -&gt; Swift.Optional&lt;StepJob.Worker&gt;"
+                  moduleName = "StepJob"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sirius/Documents/GitHub/stepjob/StepJob/Network/Data/Worker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

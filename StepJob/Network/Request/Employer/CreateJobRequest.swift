@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjectMapper
 
 class CreateJobRequest: NSObject {
     
@@ -43,7 +44,7 @@ class CreateJobRequest: NSObject {
     }
 }
 
-class JobDate: NSObject {
+class JobDate: Mappable {
     
     var dailyEndDate: Date?
     var dailyStartDate: Date?
@@ -59,6 +60,16 @@ class JobDate: NSObject {
         self.freelancePeriodId = periodId
         self.partTimeDayId = partTimeDayId
         self.partTimeHour = partTimeHour
+    }
+    required init?(map: Map) {}
+    
+    func mapping(map: Map) {
+        dailyEndDate    <- map["dailyEndDate"]
+        dailyStartDate    <- map["dailyStartDate"]
+        freelanceDateRange    <- map["freelanceDateRange"]
+        freelancePeriodId    <- map["freelancePeriodId"]
+        partTimeDayId    <- map["partTimeDayId"]
+        partTimeHour    <- map["partTimeHour"]
     }
     
 }

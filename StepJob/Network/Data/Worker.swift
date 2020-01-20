@@ -24,11 +24,13 @@ class Worker: Mappable {
     var rating: Int?
     var softSkills: [String]?
     var jobs: [Job]?
+    var email: String?
     
     required init?(map: Map) {}
     
     func mapping(map: Map) {
         about    <- map["about"]
+        email    <- map["email"]
         age    <- map["age"]
         enabled    <- map["enabled"]
         fullName    <- map["fullName"]
@@ -49,16 +51,17 @@ class Worker: Mappable {
 class Job: Mappable {
     
     var address: String?
+    var approvedJobs: [Worker]?
     var categoryName: String?
     var costume: String?
     var creationDate: String?
     var description: String?
-    
+    var employer: Employer?
     var equipment: String?
     var id: Int?
     var isApplied: Bool?
     var jobApplyCount: Int?
-    
+    var jobDates: [JobDate]?
     var jobType: String?
     var location: String?
     var price: String?
@@ -66,6 +69,7 @@ class Job: Mappable {
     var status: String?
     var title: String?
     var workerCount: String?
+    var waitingJobApplies: [Worker]?
     
     required init?(map: Map) {}
     
@@ -86,7 +90,21 @@ class Job: Mappable {
         status    <- map["status"]
         title    <- map["title"]
         workerCount    <- map["workerCount"]
+        employer    <- map["workerCount"]
+        waitingJobApplies    <- map["waitingJobApplies"]
+        approvedJobs    <- map["approvedJobs"]
+        jobDates    <- map["jobDates"]
         
     }
     
+}
+
+class Jobs: Mappable {
+    var jobs: [Job]?
+    
+    required init?(map: Map) {}
+    
+    func mapping(map: Map) {
+        jobs    <- map["data"]
+    }
 }

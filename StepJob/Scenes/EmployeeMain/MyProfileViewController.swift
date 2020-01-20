@@ -18,8 +18,6 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var callButton: UIButton!
     
-    var isEmployer: Bool = isUserEmployer!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,18 +35,9 @@ class MyProfileViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "DashboardJobTVC", bundle: nil), forCellReuseIdentifier: "DashboardJobTVC")
         
-        if isEmployer {
-            setupForEmployer()
-            WebService().employerMe { (response, error) in
-                if let employer = Mapper<Employer>().map(JSON: response) {
-                    
-                }
-            }
-        } else {
-            messageButton.isHidden = true
-            confirmButton.isHidden = true
-            callButton.isHidden = true
-        }
+        messageButton.isHidden = true
+        confirmButton.isHidden = true
+        callButton.isHidden = true
     }
     
     func setupForEmployer() {
