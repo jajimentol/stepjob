@@ -50,7 +50,7 @@ extension EmployerProfileViewController: UITableViewDelegate, UITableViewDataSou
         if section == 0 {
             return 1
         } else {
-            return 5
+            return employerJobs?.count ?? 0
         }
     }
     
@@ -61,7 +61,7 @@ extension EmployerProfileViewController: UITableViewDelegate, UITableViewDataSou
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardJobTVC", for: indexPath) as! DashboardJobTVC
-            cell.fillCell(job: "Kasiyer", company: "Defacto", location: "İstanbul(Asya)", price: "100₺")
+            cell.fillCell(with: (employerJobs?[indexPath.row])!)
             return cell
         }
         return UITableViewCell()

@@ -17,5 +17,6 @@ var userToken: String? {
 }
 
 var employerUser: Employer?
+var employerJobs: [Job]?
 
 var workerUser: Worker?

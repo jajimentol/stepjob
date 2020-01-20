@@ -38,4 +38,11 @@ class DashboardJobTVC: UITableViewCell {
         locationLabel.text = location
         priceLabel.text = price
     }
+    
+    func fillCell(with job: Job) {
+        jobLabel.text = job.title
+        companyLabel.text = job.employer?.organizationName
+        locationLabel.text = job.location
+        priceLabel.text = job.price
+    }
 }

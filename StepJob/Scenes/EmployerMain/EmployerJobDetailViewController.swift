@@ -20,7 +20,12 @@ class EmployerJobDetailViewController: StandardViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var jobId: Int?
-    var jobData: Job?
+    var jobData: Job? {
+        didSet {
+            title = jobData?.title
+            tableView.reloadData()
+        }
+    }
     
     var activeTab: Int = ActiveTabs.applies {
         didSet {
@@ -40,7 +45,6 @@ class EmployerJobDetailViewController: StandardViewController {
     }
     
     func setInterface() {
-        title = "İlan Detayı"
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -65,6 +69,7 @@ class EmployerJobDetailViewController: StandardViewController {
     
     @objc func openJobDetail() {
         let vc = JobDetailViewController(nibName: "JobDetailViewController", bundle: nil)
+        vc.jobData = self.jobData
         vc.isEmployer = true
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -137,7 +142,7 @@ extension EmployerJobDetailViewController: UITableViewDelegate, UITableViewDataS
         let rightButton = UIButton()
         rightButton.setTitleColor(.white, for: .normal)
         rightButton.setTitle("İlan Detayı", for: .normal)
-        rightButton.addTarget(self, action: #selector(reloadTableView), for: .touchUpInside)
+        rightButton.addTarget(self, action: #selector(openJobDetail), for: .touchUpInside)
         rightButton.setTitleColor(UIColorFromRGB(0xDF6265), for: .selected)
         rightButton.tag = ActiveTabs.detail
         header.addSubview(rightButton)

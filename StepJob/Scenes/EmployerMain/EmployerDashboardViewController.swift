@@ -15,6 +15,7 @@ class EmployerDashboardViewController: StandardViewController {
     
     var jobs: [Job]? {
         didSet {
+            employerJobs = jobs
             tableView.reloadData()
         }
     }
