@@ -7,10 +7,26 @@
 //
 
 import UIKit
+import ObjectMapper
+
+struct ActiveTabs {
+    static let applies = 0
+    static let accepted = 1
+    static let detail = 2
+}
 
 class EmployerJobDetailViewController: StandardViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var jobId: Int?
+    var jobData: Job?
+    
+    var activeTab: Int = ActiveTabs.applies {
+        didSet {
+            print(activeTab)
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
@@ -19,17 +35,25 @@ class EmployerJobDetailViewController: StandardViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getJobDetail()
         setInterface()
     }
     
     func setInterface() {
         title = "İlan Detayı"
         
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "SingleEmployeeTVC", bundle: nil), forCellReuseIdentifier: "SingleEmployeeTVC")
         tableView.separatorStyle = .none
+    }
+    
+    func getJobDetail() {
+        WebService().getJobDetail(jobId: jobId ?? 0) { (response, error) in
+            if let job = Mapper<Job>().map(JSON: response), !error {
+                self.jobData = job
+            }
+        }
     }
     
     func setTargets() {
@@ -44,16 +68,46 @@ class EmployerJobDetailViewController: StandardViewController {
         vc.isEmployer = true
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @objc func reloadTableView(_ sender: UIButton) {
+        activeTab = sender.tag
+        tableView.reloadData()
+    }
 }
 
 extension EmployerJobDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        switch self.activeTab {
+        case ActiveTabs.applies:
+            return jobData?.waitingJobApplies?.count ?? 0
+        case ActiveTabs.accepted:
+            return jobData?.approvedJobApplies?.count ?? 0
+        case ActiveTabs.detail:
+            return 0
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "SingleEmployeeTVC", for: indexPath) as? SingleEmployeeTVC {
-            return cell
+        
+        switch self.activeTab {
+        case ActiveTabs.applies:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "SingleEmployeeTVC", for: indexPath) as? SingleEmployeeTVC {
+                cell.fillCell(with: (jobData?.waitingJobApplies?[indexPath.row])!)
+                return cell
+            }
+        case ActiveTabs.accepted:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "SingleEmployeeTVC", for: indexPath) as? SingleEmployeeTVC {
+                cell.fillCell(with: (jobData?.approvedJobApplies?[indexPath.row])!)
+                return cell
+            }
+        case ActiveTabs.detail:
+            break
+        default:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "SingleEmployeeTVC", for: indexPath) as? SingleEmployeeTVC {
+                return cell
+            }
         }
         return UITableViewCell()
     }
@@ -72,6 +126,8 @@ extension EmployerJobDetailViewController: UITableViewDelegate, UITableViewDataS
         leftButton.setTitleColor(.white, for: .normal)
         leftButton.setTitle("Başvurular", for: .normal)
         leftButton.setTitleColor(UIColorFromRGB(0xDF6265), for: .selected)
+        leftButton.tag = ActiveTabs.applies
+        leftButton.addTarget(self, action: #selector(reloadTableView), for: .touchUpInside)
         header.addSubview(leftButton)
         leftButton.snp.makeConstraints { (make) in
             make.left.top.bottom.equalTo(header)
@@ -81,8 +137,9 @@ extension EmployerJobDetailViewController: UITableViewDelegate, UITableViewDataS
         let rightButton = UIButton()
         rightButton.setTitleColor(.white, for: .normal)
         rightButton.setTitle("İlan Detayı", for: .normal)
-        rightButton.addTarget(self, action: #selector(openJobDetail), for: .touchUpInside)
+        rightButton.addTarget(self, action: #selector(reloadTableView), for: .touchUpInside)
         rightButton.setTitleColor(UIColorFromRGB(0xDF6265), for: .selected)
+        rightButton.tag = ActiveTabs.detail
         header.addSubview(rightButton)
         rightButton.snp.makeConstraints { (make) in
             make.right.top.bottom.equalTo(header)
@@ -92,7 +149,9 @@ extension EmployerJobDetailViewController: UITableViewDelegate, UITableViewDataS
         let middleButton = UIButton()
         middleButton.setTitleColor(.white, for: .normal)
         middleButton.setTitle("Onaylananlar", for: .normal)
+        middleButton.addTarget(self, action: #selector(reloadTableView), for: .touchUpInside)
         middleButton.setTitleColor(UIColorFromRGB(0xDF6265), for: .selected)
+        middleButton.tag = ActiveTabs.accepted
         header.addSubview(middleButton)
         middleButton.snp.makeConstraints { (make) in
             make.top.bottom.equalTo(header)

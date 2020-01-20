@@ -13,7 +13,7 @@ class EmployerTabBarController: UITabBarController {
     var messagesVC = MessagesViewController()
     var createAdVC = AdDescriptionViewController()
     var profileVC: EmployerProfileViewController!
-    var moreVC = UIViewController()
+    var moreVC = MoreViewController()
     
     override func viewDidLoad() {
         tabBar.tintColor = UIColorFromRGB(0xff6265)

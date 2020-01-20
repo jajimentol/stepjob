@@ -26,4 +26,12 @@ class SingleEmployeeTVC: UITableViewCell {
         descriptionLabel.text = "Selam, ne zaman işe başlarım?"
     }
     
+    func fillCell(with worker: Worker) {
+        
+        nameLabel.text = worker.fullName
+        descriptionLabel.text = worker.location
+        rightLabel.text = String(worker.jobCount ?? 0) + " Görevler"
+        
+    }
+    
 }

@@ -70,6 +70,7 @@ class Job: Mappable {
     var title: String?
     var workerCount: String?
     var waitingJobApplies: [Worker]?
+    var approvedJobApplies: [Worker]?
     
     required init?(map: Map) {}
     
@@ -92,6 +93,7 @@ class Job: Mappable {
         workerCount    <- map["workerCount"]
         employer    <- map["workerCount"]
         waitingJobApplies    <- map["waitingJobApplies"]
+        approvedJobApplies    <- map["approvedJobApplies"]
         approvedJobs    <- map["approvedJobs"]
         jobDates    <- map["jobDates"]
         

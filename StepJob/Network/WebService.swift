@@ -76,7 +76,7 @@ class WebService: NSObject {
     }
     
     func approveWorker(jobId: Int, workerId: Int, parameters:[String:AnyObject], complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/employers/jobs/\(jobId)/approve-job-apply/\(workerId)"
+        let url = baseUrl + "employers/jobs/\(jobId)/approve-job-apply/\(workerId)"
         SVProgressHUD.show()
         self.startRequest(.post, parameters: parameters, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -84,7 +84,7 @@ class WebService: NSObject {
     }
     
     func makeJobPassive(jobId: Int, parameters:[String:AnyObject], complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/employers/jobs/\(jobId)/passive"
+        let url = baseUrl + "employers/jobs/\(jobId)/passive"
         SVProgressHUD.show()
         self.startRequest(.post, parameters: parameters, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -92,7 +92,7 @@ class WebService: NSObject {
     }
     
     func rejectWorker(jobId: Int, workerId: Int, parameters:[String:AnyObject], complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/employers/jobs/\(jobId)/reject-job-apply/\(workerId)"
+        let url = baseUrl + "employers/jobs/\(jobId)/reject-job-apply/\(workerId)"
         SVProgressHUD.show()
         self.startRequest(.post, parameters: parameters, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -100,7 +100,7 @@ class WebService: NSObject {
     }
     
     func removeWorker(jobId: Int, workerId: Int, parameters:[String:AnyObject], complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/employers/jobs/\(jobId)/remove-worker-job/\(workerId)"
+        let url = baseUrl + "employers/jobs/\(jobId)/remove-worker-job/\(workerId)"
         SVProgressHUD.show()
         self.startRequest(.post, parameters: parameters, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -108,7 +108,7 @@ class WebService: NSObject {
     }
     
     func workerProfile(jobId: Int, workerId: Int, parameters:[String:AnyObject], complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/employers/jobs/\(jobId)/worker-profile/\(workerId)"
+        let url = baseUrl + "employers/jobs/\(jobId)/worker-profile/\(workerId)"
         SVProgressHUD.show()
         self.startRequest(.post, parameters: parameters, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -117,15 +117,15 @@ class WebService: NSObject {
     
     func createJob(jobId: Int, workerId: Int,
                    parameters:[String:AnyObject], complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/employers/jobs/create"
+        let url = baseUrl + "employers/jobs/create"
         SVProgressHUD.show()
         self.startRequest(.post, parameters: parameters, urlStr: url) { (response, isNull) in
             complete(response, isNull)
         }
     }
     
-    func getJobDetail(jobId: Int, includeWorkers: Bool = false, complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/employers/jobs/detail/\(jobId)?includeWorkers=\(includeWorkers)"
+    func getJobDetail(jobId: Int, includeWorkers: Bool = true, complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
+        let url = baseUrl + "employers/jobs/detail/\(jobId)?includeWorkers=\(includeWorkers)"
         SVProgressHUD.show()
         self.startRequest(.get, urlStr: url) { (response, isNull) in
             complete(response, isNull)

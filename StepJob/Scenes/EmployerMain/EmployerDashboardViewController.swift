@@ -84,7 +84,8 @@ extension EmployerDashboardViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Employer", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "EmployerJobDetailViewController")
+        let vc = storyboard.instantiateViewController(withIdentifier: "EmployerJobDetailViewController") as! EmployerJobDetailViewController
+        vc.jobId = jobs?[indexPath.row].id
         navigationController?.pushViewController(vc, animated: true)
     }
 }
