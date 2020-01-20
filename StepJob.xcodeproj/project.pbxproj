@@ -52,6 +52,8 @@
 		3680B2E023716E0900A701D3 /* SingleEmployeeTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3680B2DE23716E0900A701D3 /* SingleEmployeeTVC.xib */; };
 		36810BCA23D488D5008E416C /* Employer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36810BC923D488D5008E416C /* Employer.swift */; };
 		36810BCC23D58566008E416C /* EmployerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36810BCB23D58566008E416C /* EmployerProfileViewController.swift */; };
+		36810BCF23D587A5008E416C /* EmployerProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36810BCD23D587A4008E416C /* EmployerProfileTVC.swift */; };
+		36810BD023D587A5008E416C /* EmployerProfileTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36810BCE23D587A4008E416C /* EmployerProfileTVC.xib */; };
 		3685950C23CCA3D300344273 /* WorkerRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3685950B23CCA3D300344273 /* WorkerRegisterRequest.swift */; };
 		3685951123CCA63200344273 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3685951023CCA63200344273 /* Worker.swift */; };
 		36B0DCEB239E30DB00E88FDB /* AdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B0DCEA239E30DB00E88FDB /* AdViewController.swift */; };
@@ -129,6 +131,8 @@
 		3680B2DE23716E0900A701D3 /* SingleEmployeeTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleEmployeeTVC.xib; sourceTree = "<group>"; };
 		36810BC923D488D5008E416C /* Employer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employer.swift; sourceTree = "<group>"; };
 		36810BCB23D58566008E416C /* EmployerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerProfileViewController.swift; sourceTree = "<group>"; };
+		36810BCD23D587A4008E416C /* EmployerProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerProfileTVC.swift; sourceTree = "<group>"; };
+		36810BCE23D587A4008E416C /* EmployerProfileTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployerProfileTVC.xib; sourceTree = "<group>"; };
 		3685950B23CCA3D300344273 /* WorkerRegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerRegisterRequest.swift; sourceTree = "<group>"; };
 		3685951023CCA63200344273 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		36B0DCEA239E30DB00E88FDB /* AdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewController.swift; sourceTree = "<group>"; };
@@ -318,6 +322,8 @@
 				36452FBF23A8DAEE00B1F394 /* ProfileHeaderTVC.xib */,
 				36FF96FD23C75BF70081D14B /* CollectionViewTVC.swift */,
 				36FF96FE23C75BF70081D14B /* CollectionViewTVC.xib */,
+				36810BCD23D587A4008E416C /* EmployerProfileTVC.swift */,
+				36810BCE23D587A4008E416C /* EmployerProfileTVC.xib */,
 			);
 			path = TVCells;
 			sourceTree = "<group>";
@@ -507,6 +513,7 @@
 				362C0E8323605453007D6E3C /* DashboardHeaderTVC.xib in Resources */,
 				360BC3FF2393C15400D7BA5C /* OtherMessageTVC.xib in Resources */,
 				299DB10B228EDA2400E2F321 /* Localizable.strings in Resources */,
+				36810BD023D587A5008E416C /* EmployerProfileTVC.xib in Resources */,
 				36B0DCFD239E812600E88FDB /* AdPreview.xib in Resources */,
 				360BC3FB2393BEE900D7BA5C /* SelfMessageTVC.xib in Resources */,
 			);
@@ -578,6 +585,7 @@
 				36CAD1E823C88A6B00B6A76B /* UserData.swift in Sources */,
 				3609910B23534AA400DA67C8 /* EmployerRegisterResponse.swift in Sources */,
 				29759B36228ED21000EE48AA /* CustomTextField.swift in Sources */,
+				36810BCF23D587A5008E416C /* EmployerProfileTVC.swift in Sources */,
 				360991092353492500DA67C8 /* EmployerRegisterRequest.swift in Sources */,
 				29759B1C228ED0BC00EE48AA /* AppDelegate.swift in Sources */,
 				3609911223534F4300DA67C8 /* EmployerData.swift in Sources */,

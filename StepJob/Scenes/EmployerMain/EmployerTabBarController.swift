@@ -12,7 +12,7 @@ class EmployerTabBarController: UITabBarController {
     
     var messagesVC = MessagesViewController()
     var createAdVC = AdDescriptionViewController()
-    var profileVC = MyProfileViewController(nibName: "MyProfileViewController", bundle: nil)
+    var profileVC: EmployerProfileViewController!
     var moreVC = UIViewController()
     
     override func viewDidLoad() {
@@ -39,6 +39,9 @@ class EmployerTabBarController: UITabBarController {
                                               selectedImage: createAdImage.withRenderingMode(.alwaysTemplate))
         createAdVC.tabBarItem = createAdTabBarItem
         
+        let storyBoard = UIStoryboard(name: "Employer", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "EmployerProfileViewController") as! EmployerProfileViewController
+        profileVC = vc
         let profileImage = resizeImage(image: UIImage(named: "profile")!, targetSize: CGSize(width: 28, height: 28))
         let profileTabBarItem = UITabBarItem(title: "Profile",
                                              image: profileImage.withRenderingMode(.alwaysTemplate),
