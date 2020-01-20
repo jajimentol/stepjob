@@ -43,6 +43,14 @@ class WebService: NSObject {
         }
     }
     
+    func workerLogin(parameters:[String:AnyObject], complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
+        let url = baseUrl + "workers/login"
+        SVProgressHUD.show()
+        self.startRequest(.post, parameters: parameters, urlStr: url) { (response, isNull) in
+            complete(response, isNull)
+        }
+    }
+    
     func employerUpdateProfile(parameters:[String:AnyObject], complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
         let url = baseUrl + "employers/me/update-profile"
         SVProgressHUD.show()
@@ -224,7 +232,7 @@ class WebService: NSObject {
         
         var url = urlStr
         
-        let headers: HTTPHeaders = [
+        var headers: HTTPHeaders = [
 //            "Accept": "application/json",
             "Content-Type" : "application/json",
 //            "ApplicationVersion" : Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String,
@@ -243,6 +251,12 @@ class WebService: NSObject {
             //print("RESPONSE ",response.result)
             
             SVProgressHUD.dismiss()
+            
+            if UserDefaults.standard.object(forKey: "sj-token") == nil || UserDefaults.standard.string(forKey: "sj-token") == "" {
+                if let token = response.response?.allHeaderFields["Authorization"] as? String {
+                    userToken = token.replacingOccurrences(of: "Bearer ", with: "")
+                }
+            }
             
             if response.result.isSuccess {
                 if let JSON = response.result.value {
@@ -285,7 +299,7 @@ class WebService: NSObject {
             //"h24-token" : "1653e9e8-8315-4465-8d2c-6dfde42dbb85"
             //"h24-token" : "789bb8e9-fd92-42c2-ae83-2e1e6235d06c"//medic
             
-            "Authorization" : UserDefaults.standard.object(forKey: "sj-token") as? String ?? ""
+            "Authorization" : "Bearer \(UserDefaults.standard.object(forKey: "sj-token") as? String ?? "")"
         ]
         
         url = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!

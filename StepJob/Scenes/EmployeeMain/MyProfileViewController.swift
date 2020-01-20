@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class MyProfileViewController: UIViewController {
 
@@ -17,7 +18,7 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var callButton: UIButton!
     
-    var isEmployer: Bool = false
+    var isEmployer: Bool = isUserEmployer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +27,7 @@ class MyProfileViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(!isEmployer, animated: true)
-        
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     func setInterface() {
@@ -39,6 +39,11 @@ class MyProfileViewController: UIViewController {
         
         if isEmployer {
             setupForEmployer()
+            WebService().employerMe { (response, error) in
+                if let employer = Mapper<Employer>().map(JSON: response) {
+                    
+                }
+            }
         } else {
             messageButton.isHidden = true
             confirmButton.isHidden = true

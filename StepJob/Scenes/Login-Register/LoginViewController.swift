@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ObjectMapper
 
 class LoginViewController: StandardViewController {
     
@@ -16,10 +17,6 @@ class LoginViewController: StandardViewController {
                                    size: 20)
     
     var loginButton = curvedButton(text: NSLocalizedString("login",
-                                                           comment: ""),
-                                   color: UIColorFromRGB(0xff6265))
-    
-    var employerButton = curvedButton(text: NSLocalizedString("employer_login_title",
                                                            comment: ""),
                                    color: UIColorFromRGB(0xff6265))
     
@@ -88,29 +85,39 @@ class LoginViewController: StandardViewController {
             make.top.equalTo(loginButton.snp.bottom).offset(40)
         }
         addSlide()
-        
-        view.addSubview(employerButton)
-        employerButton.snp.makeConstraints { (make) in
-            make.left.right.height.equalTo(loginButton)
-            make.top.equalTo(forgotPasswordButton.snp.bottom).offset(24)
-        }
     }
     
     func setTargets() {
         loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
-        employerButton.addTarget(self, action: #selector(employerTapped), for: .touchUpInside)
     }
     
     @objc func loginTapped() {
-        let vc = MainViewController()
-        navigationController?.setViewControllers([vc], animated: true)
         
-    }
-    
-    @objc func employerTapped() {
-        let vc = EmployerTabBarController()
-        navigationController?.setViewControllers([vc], animated: true)
+        let parameters = ["email" : emailField.textfield.text as AnyObject,
+                          "password" : passwordField.textfield.text as AnyObject]
         
+        if isUserEmployer! {
+            WebService().employerLogin(parameters: parameters) { (response, error) in
+                if !error {
+                    if let emplyer = Mapper<Employer>().map(JSON: response) {
+                        
+                    }
+                    let vc = EmployerTabBarController()
+                    self.navigationController?.setViewControllers([vc], animated: true)
+                } else {
+                    
+                }
+            }
+        } else {
+            WebService().workerLogin(parameters: parameters) { (response, error) in
+                if !error {
+                    let vc = MainViewController()
+                    self.navigationController?.setViewControllers([vc], animated: true)
+                } else {
+                    
+                }
+            }
+        }
     }
     
     @objc func forgotPasswordTapped() {

@@ -50,6 +50,8 @@
 		3680B2DA23716D8700A701D3 /* EmployerJobDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3680B2D923716D8700A701D3 /* EmployerJobDetailViewController.swift */; };
 		3680B2DF23716E0900A701D3 /* SingleEmployeeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3680B2DD23716E0900A701D3 /* SingleEmployeeTVC.swift */; };
 		3680B2E023716E0900A701D3 /* SingleEmployeeTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3680B2DE23716E0900A701D3 /* SingleEmployeeTVC.xib */; };
+		36810BCA23D488D5008E416C /* Employer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36810BC923D488D5008E416C /* Employer.swift */; };
+		36810BCC23D58566008E416C /* EmployerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36810BCB23D58566008E416C /* EmployerProfileViewController.swift */; };
 		3685950C23CCA3D300344273 /* WorkerRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3685950B23CCA3D300344273 /* WorkerRegisterRequest.swift */; };
 		3685951123CCA63200344273 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3685951023CCA63200344273 /* Worker.swift */; };
 		36B0DCEB239E30DB00E88FDB /* AdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B0DCEA239E30DB00E88FDB /* AdViewController.swift */; };
@@ -125,6 +127,8 @@
 		3680B2D923716D8700A701D3 /* EmployerJobDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerJobDetailViewController.swift; sourceTree = "<group>"; };
 		3680B2DD23716E0900A701D3 /* SingleEmployeeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEmployeeTVC.swift; sourceTree = "<group>"; };
 		3680B2DE23716E0900A701D3 /* SingleEmployeeTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleEmployeeTVC.xib; sourceTree = "<group>"; };
+		36810BC923D488D5008E416C /* Employer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employer.swift; sourceTree = "<group>"; };
+		36810BCB23D58566008E416C /* EmployerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerProfileViewController.swift; sourceTree = "<group>"; };
 		3685950B23CCA3D300344273 /* WorkerRegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerRegisterRequest.swift; sourceTree = "<group>"; };
 		3685951023CCA63200344273 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		36B0DCEA239E30DB00E88FDB /* AdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewController.swift; sourceTree = "<group>"; };
@@ -350,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				3685951023CCA63200344273 /* Worker.swift */,
+				36810BC923D488D5008E416C /* Employer.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 				36B0DCEC239E3A9700E88FDB /* AdDescriptionViewController.swift */,
 				36B0DCEE239E4D9F00E88FDB /* AdTimeViewController.swift */,
 				36B0DCFA239E804A00E88FDB /* AdPreviewViewController.swift */,
+				36810BCB23D58566008E416C /* EmployerProfileViewController.swift */,
 			);
 			path = EmployerMain;
 			sourceTree = "<group>";
@@ -563,6 +569,7 @@
 				360BC3FE2393C15400D7BA5C /* OtherMessageTVC.swift in Sources */,
 				36B0DCFB239E804A00E88FDB /* AdPreviewViewController.swift in Sources */,
 				36B0DCEF239E4D9F00E88FDB /* AdTimeViewController.swift in Sources */,
+				36810BCA23D488D5008E416C /* Employer.swift in Sources */,
 				299DB117228EEBA900E2F321 /* OnboardingViewController.swift in Sources */,
 				36C60535236AF40900B09526 /* EmployerDashboardViewController.swift in Sources */,
 				360BC3F22393BBC000D7BA5C /* SearchHeaderTVC.swift in Sources */,
@@ -591,6 +598,7 @@
 				36B0DCEB239E30DB00E88FDB /* AdViewController.swift in Sources */,
 				36FF96FC23C75AE70081D14B /* MoreViewController.swift in Sources */,
 				36099105235348BE00DA67C8 /* WebService.swift in Sources */,
+				36810BCC23D58566008E416C /* EmployerProfileViewController.swift in Sources */,
 				36452FBD23A7BF6900B1F394 /* AdPreview.swift in Sources */,
 				36C60538236AF48D00B09526 /* EmployerDashboardTVC.swift in Sources */,
 				36FF970323C75C360081D14B /* CircleWithLabelCVC.swift in Sources */,
