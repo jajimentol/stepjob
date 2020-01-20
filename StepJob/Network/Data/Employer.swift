@@ -13,7 +13,7 @@ class Employer: Mappable {
     
     var email: String?
     var priceFree: Bool?
-    var organizationName: Bool?
+    var organizationName: String?
     var activeJobCount: Int?
     var passiveJobCount: Int?
     var registerDate: String?

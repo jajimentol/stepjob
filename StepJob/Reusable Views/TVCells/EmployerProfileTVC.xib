@@ -18,20 +18,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="company" translatesAutoresizingMaskIntoConstraints="NO" id="L8K-P2-FIX">
-                        <rect key="frame" x="162.5" y="30" width="120" height="120"/>
+                        <rect key="frame" x="172.5" y="30" width="100" height="100"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="120" id="GPc-eD-1OO"/>
+                            <constraint firstAttribute="width" constant="100" id="GPc-eD-1OO"/>
                             <constraint firstAttribute="width" secondItem="L8K-P2-FIX" secondAttribute="height" multiplier="1:1" id="eLV-60-irJ"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEFACTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VT6-xU-k0E">
-                        <rect key="frame" x="30" y="160" width="385" height="24"/>
+                        <rect key="frame" x="30" y="140" width="385" height="24"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ibr-va-5aA">
-                        <rect key="frame" x="222" y="214" width="1" height="80"/>
+                        <rect key="frame" x="222" y="194" width="1" height="80"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="1" id="0jo-YS-I0g"/>
@@ -39,31 +39,31 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İlanlar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COF-8X-1rk">
-                        <rect key="frame" x="60" y="263" width="142" height="21"/>
+                        <rect key="frame" x="60" y="243" width="142" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulP-ZG-uc5">
-                        <rect key="frame" x="126" y="229" width="10" height="24"/>
+                        <rect key="frame" x="126" y="209" width="10" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firma Puanı" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fR4-hM-G51">
-                        <rect key="frame" x="243" y="263" width="142" height="21"/>
+                        <rect key="frame" x="243" y="243" width="142" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEm-7P-xri">
-                        <rect key="frame" x="298" y="229" width="32" height="24"/>
+                        <rect key="frame" x="298" y="209" width="32" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UC7-Lw-vVM">
-                        <rect key="frame" x="50" y="319" width="345" height="40"/>
+                        <rect key="frame" x="50" y="299" width="345" height="40"/>
                         <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="Znw-fH-24g"/>
@@ -74,54 +74,61 @@
                         </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sektör" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHz-ho-DlR">
-                        <rect key="frame" x="30" y="384" width="50.5" height="21"/>
+                        <rect key="frame" x="30" y="364" width="50.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tekstil, Kozmetik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPc-Cx-2Zp">
-                        <rect key="frame" x="30" y="409" width="405" height="21"/>
+                        <rect key="frame" x="30" y="389" width="405" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODh-bm-SSy">
-                        <rect key="frame" x="30" y="450" width="405" height="21"/>
+                        <rect key="frame" x="30" y="430" width="405" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.defacto.com.tr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnK-2T-EIZ">
-                        <rect key="frame" x="30" y="475" width="405" height="21"/>
+                        <rect key="frame" x="30" y="455" width="405" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfI-L5-nR2">
-                        <rect key="frame" x="30" y="516" width="405" height="21"/>
+                        <rect key="frame" x="30" y="496" width="405" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İstanbul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLX-Dn-gKy">
-                        <rect key="frame" x="30" y="541" width="405" height="21"/>
+                        <rect key="frame" x="30" y="521" width="405" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hakkında" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvW-8M-0Wh">
-                        <rect key="frame" x="30" y="582" width="405" height="21"/>
+                        <rect key="frame" x="30" y="562" width="405" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYK-Xq-Koe">
-                        <rect key="frame" x="30" y="607" width="405" height="142.5"/>
+                        <rect key="frame" x="30" y="587" width="405" height="142.5"/>
                         <string key="text">DeFacto olarak, 2005 yılında ilk mağazamızı açtığımız günlerden bu güne Türkiye'de hazır giyim ve moda sektörünün lider markaları arasındaki yerimizi alıyoruz. 2019 yılı itibarıyla 30 ülkede toplamda 500'ün üzerinde mağazamızla, Türkiye'de alanında ilk 3 şirketten biri olarak yolumuza devam ediyoruz.</string>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F5e-ej-kHF">
+                        <rect key="frame" x="0.0" y="777" width="445" height="5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="5" id="rHz-P4-IEf"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="TnK-2T-EIZ" firstAttribute="top" secondItem="ODh-bm-SSy" secondAttribute="bottom" constant="4" id="0jf-ng-LvL"/>
@@ -147,19 +154,22 @@
                     <constraint firstItem="FYK-Xq-Koe" firstAttribute="trailing" secondItem="tvW-8M-0Wh" secondAttribute="trailing" id="LCN-TF-k9x"/>
                     <constraint firstItem="FYK-Xq-Koe" firstAttribute="leading" secondItem="tvW-8M-0Wh" secondAttribute="leading" id="LXc-Qm-akT"/>
                     <constraint firstItem="yfI-L5-nR2" firstAttribute="trailing" secondItem="TnK-2T-EIZ" secondAttribute="trailing" id="Lcn-4w-Bcn"/>
-                    <constraint firstAttribute="bottom" secondItem="FYK-Xq-Koe" secondAttribute="bottom" constant="32.5" id="NuZ-ku-fst"/>
                     <constraint firstItem="COF-8X-1rk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="40" id="OZj-xA-u6L"/>
+                    <constraint firstAttribute="trailing" secondItem="F5e-ej-kHF" secondAttribute="trailing" id="RmP-WL-97k"/>
                     <constraint firstAttribute="trailingMargin" secondItem="fR4-hM-G51" secondAttribute="trailing" constant="40" id="XPA-al-9We"/>
                     <constraint firstItem="nLX-Dn-gKy" firstAttribute="leading" secondItem="yfI-L5-nR2" secondAttribute="leading" id="YrY-px-ScK"/>
                     <constraint firstItem="ulP-ZG-uc5" firstAttribute="centerX" secondItem="COF-8X-1rk" secondAttribute="centerX" id="ZzL-hw-ntk"/>
                     <constraint firstItem="COF-8X-1rk" firstAttribute="top" secondItem="ulP-ZG-uc5" secondAttribute="bottom" constant="10" id="aUL-FK-qd5"/>
                     <constraint firstItem="yfI-L5-nR2" firstAttribute="top" secondItem="TnK-2T-EIZ" secondAttribute="bottom" constant="20" id="bZw-q2-FcG"/>
                     <constraint firstItem="yfI-L5-nR2" firstAttribute="leading" secondItem="TnK-2T-EIZ" secondAttribute="leading" id="ctM-al-7hm"/>
+                    <constraint firstAttribute="bottom" secondItem="FYK-Xq-Koe" secondAttribute="bottom" constant="52.5" id="f2r-Yh-6C9"/>
                     <constraint firstItem="VEm-7P-xri" firstAttribute="centerX" secondItem="fR4-hM-G51" secondAttribute="centerX" id="g2I-5c-SjI"/>
                     <constraint firstAttribute="trailing" secondItem="VT6-xU-k0E" secondAttribute="trailing" constant="30" id="g3E-VD-XUz"/>
                     <constraint firstItem="zPc-Cx-2Zp" firstAttribute="leading" secondItem="sHz-ho-DlR" secondAttribute="leading" id="gUZ-Db-kmb"/>
                     <constraint firstItem="COF-8X-1rk" firstAttribute="bottom" secondItem="ibr-va-5aA" secondAttribute="bottom" constant="-10" id="iFA-3j-d4g"/>
                     <constraint firstItem="fR4-hM-G51" firstAttribute="centerY" secondItem="COF-8X-1rk" secondAttribute="centerY" id="iQq-a7-lj8"/>
+                    <constraint firstAttribute="bottom" secondItem="F5e-ej-kHF" secondAttribute="bottom" id="ijm-UG-ChT"/>
+                    <constraint firstItem="F5e-ej-kHF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="itC-ae-iF9"/>
                     <constraint firstItem="VT6-xU-k0E" firstAttribute="top" secondItem="L8K-P2-FIX" secondAttribute="bottom" constant="10" id="lp5-Aq-78l"/>
                     <constraint firstItem="L8K-P2-FIX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="nPq-SB-Nef"/>
                     <constraint firstItem="FYK-Xq-Koe" firstAttribute="top" secondItem="tvW-8M-0Wh" secondAttribute="bottom" constant="4" id="uPy-F8-CFX"/>
@@ -172,7 +182,16 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="aboutLabel" destination="FYK-Xq-Koe" id="gsG-bd-Ruo"/>
+                <outlet property="addressLabel" destination="nLX-Dn-gKy" id="V7w-De-Jnx"/>
+                <outlet property="adsLabel" destination="ulP-ZG-uc5" id="ccU-QM-8YM"/>
+                <outlet property="companyLabel" destination="VT6-xU-k0E" id="UTI-4U-3bi"/>
                 <outlet property="editButton" destination="UC7-Lw-vVM" id="qCt-0X-uwH"/>
+                <outlet property="imageView" destination="L8K-P2-FIX" id="ltM-jq-12P"/>
+                <outlet property="profileImage" destination="L8K-P2-FIX" id="got-RT-Qso"/>
+                <outlet property="ratingLabel" destination="VEm-7P-xri" id="3rd-Ck-Vpm"/>
+                <outlet property="sectorLabel" destination="zPc-Cx-2Zp" id="UbN-kL-7ny"/>
+                <outlet property="websiteLabel" destination="TnK-2T-EIZ" id="zef-Of-QXK"/>
             </connections>
             <point key="canvasLocation" x="228.2608695652174" y="354.91071428571428"/>
         </tableViewCell>
