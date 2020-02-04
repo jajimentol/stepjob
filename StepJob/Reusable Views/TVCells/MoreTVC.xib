@@ -23,11 +23,11 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="60" image="questionmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="imX-aG-BeH">
-                        <rect key="frame" x="32" y="63.5" width="40" height="1"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="imX-aG-BeH">
+                        <rect key="frame" x="32" y="44" width="40" height="40"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" id="6rF-sC-uC7"/>
+                            <constraint firstAttribute="height" constant="40" id="6rF-sC-uC7"/>
                             <constraint firstAttribute="width" constant="40" id="sbp-p4-3Ug"/>
                         </constraints>
                     </imageView>
@@ -47,7 +47,4 @@
             <point key="canvasLocation" x="97.101449275362327" y="111.83035714285714"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="questionmark.circle" catalog="system" width="64" height="60"/>
-    </resources>
 </document>

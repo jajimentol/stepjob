@@ -25,28 +25,28 @@ class MoreTVC: UITableViewCell {
             if #available(iOS 13.0, *) {
                 rowImage.image = UIImage(systemName: "lock")
             } else {
-                rowImage.image = UIImage(named: "")
+                rowImage.image = UIImage(named: "lock")
             }
         case 1:
             rowLabel.text = "Bildirimler"
             if #available(iOS 13.0, *) {
                 rowImage.image = UIImage(systemName: "bell")
             } else {
-                rowImage.image = UIImage(named: "")
+                rowImage.image = UIImage(named: "bell")
             }
         case 2:
             rowLabel.text = "Yardım"
             if #available(iOS 13.0, *) {
                 rowImage.image = UIImage(systemName: "questionmark.circle")
             } else {
-                rowImage.image = UIImage(named: "")
+                rowImage.image = UIImage(named: "questionmark.circle")
             }
         case 3:
             rowLabel.text = "Hakkında"
             if #available(iOS 13.0, *) {
                 rowImage.image = UIImage(systemName: "info.circle")
             } else {
-                rowImage.image = UIImage(named: "")
+                rowImage.image = UIImage(named: "info.circle")
             }
         case 4:
             rowLabel.text = "Çıkış Yap"

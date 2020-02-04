@@ -115,7 +115,7 @@ class OnboardingViewController: StandardViewController {
     }
     
     func setTitles() {
-        if !isEmployer {
+        if isEmployer {
             questionLabel.text = "İş mi arıyorsun?"
             questionButton.setTitle("Çalışan olarak giriş yap", for: .normal)
         } else {
