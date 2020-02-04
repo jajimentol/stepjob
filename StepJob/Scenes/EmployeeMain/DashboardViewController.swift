@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class DashboardViewController: StandardViewController {
     
@@ -24,6 +25,12 @@ class DashboardViewController: StandardViewController {
     var countyField: UITextField!
     var typeField: UITextField!
     
+    var jobs: [Job]? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -40,6 +47,7 @@ class DashboardViewController: StandardViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getJobs()
         setInterface()
         setTargets()
     }
@@ -68,6 +76,17 @@ class DashboardViewController: StandardViewController {
     func setTargets() {
     }
     
+    func getJobs() {
+        
+        WebService().workerJobs { [weak self] (response, error) in
+            guard let strongSelf = self else { return }
+            if !error, let jobs = Mapper<Jobs>().map(JSONObject: response) {
+                strongSelf.jobs = jobs.jobs
+            }
+        }
+        
+    }
+    
 }
 
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
@@ -75,7 +94,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         } else if section == 2 {
-            return 4
+            return jobs?.count ?? 0
         } else if section == 1 {
             return 1
         } else {return 0}
@@ -97,9 +116,12 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
             set()
             return cell
         } else if indexPath.section == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardJobTVC", for: indexPath) as! DashboardJobTVC
-            cell.fillCell(job: "Yazılım Geliştirme Elemanı", company: "ROTA İNTERNET TEKNOLOJİ HİZMETLERİ", location: "İstanbul(Asya)", price: "100₺")
-            return cell
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardJobTVC",
+                                                        for: indexPath) as? DashboardJobTVC,
+                let job = jobs?[indexPath.row] {
+                    cell.fillCell(with: job)
+                    return cell
+            }
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionViewTVC", for: indexPath) as! CollectionViewTVC
             cell.collectionView.delegate = self
