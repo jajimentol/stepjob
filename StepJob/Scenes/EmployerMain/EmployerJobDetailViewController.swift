@@ -78,6 +78,16 @@ class EmployerJobDetailViewController: StandardViewController {
         activeTab = sender.tag
         tableView.reloadData()
     }
+    
+    func getWorker(workerId: Int) {
+        
+        WebService().workerProfile(jobId: jobId ?? 0, workerId: workerId) { (response, error) in
+            if !error {
+                
+            }
+        }
+        
+    }
 }
 
 extension EmployerJobDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -118,8 +128,14 @@ extension EmployerJobDetailViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = MyProfileViewController(nibName: "MyProfileViewController", bundle: nil)
-        navigationController?.pushViewController(vc, animated: true)
+        switch self.activeTab {
+        case ActiveTabs.applies, ActiveTabs.accepted:
+            let vc = MyProfileViewController(nibName: "MyProfileViewController", bundle: nil)
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

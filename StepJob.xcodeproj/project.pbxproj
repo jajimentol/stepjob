@@ -44,6 +44,8 @@
 		362C0E8B23605A00007D6E3C /* JobDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 362C0E8923605A00007D6E3C /* JobDetailViewController.xib */; };
 		362C0E8E2360626E007D6E3C /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362C0E8C2360626E007D6E3C /* MyProfileViewController.swift */; };
 		362C0E8F2360626E007D6E3C /* MyProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 362C0E8D2360626E007D6E3C /* MyProfileViewController.xib */; };
+		363832BA23E9801600FBC71B /* MoreTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363832B823E9801600FBC71B /* MoreTVC.swift */; };
+		363832BB23E9801600FBC71B /* MoreTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 363832B923E9801600FBC71B /* MoreTVC.xib */; };
 		36452FBD23A7BF6900B1F394 /* AdPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36452FBC23A7BF6900B1F394 /* AdPreview.swift */; };
 		36452FC023A8DAEE00B1F394 /* ProfileHeaderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36452FBE23A8DAEE00B1F394 /* ProfileHeaderTVC.swift */; };
 		36452FC123A8DAEE00B1F394 /* ProfileHeaderTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36452FBF23A8DAEE00B1F394 /* ProfileHeaderTVC.xib */; };
@@ -123,6 +125,8 @@
 		362C0E8923605A00007D6E3C /* JobDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobDetailViewController.xib; sourceTree = "<group>"; };
 		362C0E8C2360626E007D6E3C /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		362C0E8D2360626E007D6E3C /* MyProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProfileViewController.xib; sourceTree = "<group>"; };
+		363832B823E9801600FBC71B /* MoreTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTVC.swift; sourceTree = "<group>"; };
+		363832B923E9801600FBC71B /* MoreTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTVC.xib; sourceTree = "<group>"; };
 		36452FBC23A7BF6900B1F394 /* AdPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPreview.swift; sourceTree = "<group>"; };
 		36452FBE23A8DAEE00B1F394 /* ProfileHeaderTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderTVC.swift; sourceTree = "<group>"; };
 		36452FBF23A8DAEE00B1F394 /* ProfileHeaderTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderTVC.xib; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 				36FF96FE23C75BF70081D14B /* CollectionViewTVC.xib */,
 				36810BCD23D587A4008E416C /* EmployerProfileTVC.swift */,
 				36810BCE23D587A4008E416C /* EmployerProfileTVC.xib */,
+				363832B823E9801600FBC71B /* MoreTVC.swift */,
+				363832B923E9801600FBC71B /* MoreTVC.xib */,
 			);
 			path = TVCells;
 			sourceTree = "<group>";
@@ -513,6 +519,7 @@
 				362C0E8323605453007D6E3C /* DashboardHeaderTVC.xib in Resources */,
 				360BC3FF2393C15400D7BA5C /* OtherMessageTVC.xib in Resources */,
 				299DB10B228EDA2400E2F321 /* Localizable.strings in Resources */,
+				363832BB23E9801600FBC71B /* MoreTVC.xib in Resources */,
 				36810BD023D587A5008E416C /* EmployerProfileTVC.xib in Resources */,
 				36B0DCFD239E812600E88FDB /* AdPreview.xib in Resources */,
 				360BC3FB2393BEE900D7BA5C /* SelfMessageTVC.xib in Resources */,
@@ -584,6 +591,7 @@
 				3680B2DF23716E0900A701D3 /* SingleEmployeeTVC.swift in Sources */,
 				36CAD1E823C88A6B00B6A76B /* UserData.swift in Sources */,
 				3609910B23534AA400DA67C8 /* EmployerRegisterResponse.swift in Sources */,
+				363832BA23E9801600FBC71B /* MoreTVC.swift in Sources */,
 				29759B36228ED21000EE48AA /* CustomTextField.swift in Sources */,
 				36810BCF23D587A5008E416C /* EmployerProfileTVC.swift in Sources */,
 				360991092353492500DA67C8 /* EmployerRegisterRequest.swift in Sources */,
