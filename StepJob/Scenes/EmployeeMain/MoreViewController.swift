@@ -18,7 +18,7 @@ class MoreViewController: UITableViewController {
     
     func setInterface() {
         
-        
+        tableView.register(UINib(nibName: "MoreTVC", bundle: nil), forCellReuseIdentifier: "MoreTVC")
         
     }
     
@@ -27,26 +27,17 @@ class MoreViewController: UITableViewController {
 extension MoreViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        switch indexPath.row {
-        case 0:
-            cell.textLabel?.text = "Şifreni Yenile"
-        case 1:
-            cell.textLabel?.text = "Bildirimler"
-        case 2:
-            cell.textLabel?.text = "Yardım"
-        case 3:
-            cell.textLabel?.text = "Hakkında"
-        case 4:
-            cell.textLabel?.text = "Çıkış Yap"
-        default:
-            cell.textLabel?.text = "Default Case"
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MoreTVC", for: indexPath) as! MoreTVC
+        cell.fillCell(row: indexPath.row)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
     
 }
