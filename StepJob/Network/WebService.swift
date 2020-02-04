@@ -67,8 +67,24 @@ class WebService: NSObject {
         }
     }
     
+    func workerMe(complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
+        let url = baseUrl + "workers/me"
+        SVProgressHUD.show()
+        self.startRequest(.get, urlStr: url) { (response, isNull) in
+            complete(response, isNull)
+        }
+    }
+    
     func employerJobs(status: String, complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
         let url = baseUrl + "employers/jobs?jobStatus=" + status
+        SVProgressHUD.show()
+        self.startRequest(.get, urlStr: url) { (response, isNull) in
+            complete(response, isNull)
+        }
+    }
+    
+    func workerJobs(complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
+        let url = baseUrl + "worker/jobs"
         SVProgressHUD.show()
         self.startRequest(.get, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -107,10 +123,10 @@ class WebService: NSObject {
         }
     }
     
-    func workerProfile(jobId: Int, workerId: Int, parameters:[String:AnyObject], complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
+    func workerProfile(jobId: Int, workerId: Int, complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
         let url = baseUrl + "employers/jobs/\(jobId)/worker-profile/\(workerId)"
         SVProgressHUD.show()
-        self.startRequest(.post, parameters: parameters, urlStr: url) { (response, isNull) in
+        self.startRequest(.post, urlStr: url) { (response, isNull) in
             complete(response, isNull)
         }
     }
@@ -133,7 +149,7 @@ class WebService: NSObject {
     }
     
     func lookupActivityAreas(complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/lookup/job/activity-areas"
+        let url = baseUrl + "lookup/job/activity-areas"
         SVProgressHUD.show()
         self.startRequest(.get, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -141,7 +157,7 @@ class WebService: NSObject {
     }
     
     func lookupCategories(complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/lookup/job/categories"
+        let url = baseUrl + "lookup/job/categories"
         SVProgressHUD.show()
         self.startRequest(.get, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -149,7 +165,7 @@ class WebService: NSObject {
     }
     
     func lookupDays(complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/lookup/job/days"
+        let url = baseUrl + "lookup/job/days"
         SVProgressHUD.show()
         self.startRequest(.get, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -157,7 +173,7 @@ class WebService: NSObject {
     }
     
     func lookupPeriods(complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/lookup/job/freelance-periods"
+        let url = baseUrl + "lookup/job/freelance-periods"
         SVProgressHUD.show()
         self.startRequest(.get, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -165,7 +181,7 @@ class WebService: NSObject {
     }
     
     func lookupJobTypes(complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/lookup/job/job-types"
+        let url = baseUrl + "lookup/job/job-types"
         SVProgressHUD.show()
         self.startRequest(.get, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -173,7 +189,7 @@ class WebService: NSObject {
     }
     
     func lookupJobPrices(complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/lookup/job/price-types"
+        let url = baseUrl + "lookup/job/price-types"
         SVProgressHUD.show()
         self.startRequest(.get, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -181,7 +197,7 @@ class WebService: NSObject {
     }
     
     func lookupJobLocations(complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/lookup/job/provinces"
+        let url = baseUrl + "lookup/job/provinces"
         SVProgressHUD.show()
         self.startRequest(.get, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -189,7 +205,7 @@ class WebService: NSObject {
     }
     
     func lookupDistrictsByProvince(plateCode: Int, complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/lookup/job/provinces/\(plateCode)/districts"
+        let url = baseUrl + "lookup/job/provinces/\(plateCode)/districts"
         SVProgressHUD.show()
         self.startRequest(.get, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -197,7 +213,7 @@ class WebService: NSObject {
     }
     
     func lookupRatingTags(complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/lookup/rating/rating-tags"
+        let url = baseUrl + "lookup/rating/rating-tags"
         SVProgressHUD.show()
         self.startRequest(.get, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -205,7 +221,7 @@ class WebService: NSObject {
     }
     
     func lookupRefreshCaches(complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/lookup/refresh-cache"
+        let url = baseUrl + "lookup/refresh-cache"
         SVProgressHUD.show()
         self.startRequest(.get, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -213,7 +229,7 @@ class WebService: NSObject {
     }
     
     func lookupSoftWorkers(complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/lookup/worker/soft-skills"
+        let url = baseUrl + "lookup/worker/soft-skills"
         SVProgressHUD.show()
         self.startRequest(.get, urlStr: url) { (response, isNull) in
             complete(response, isNull)
@@ -221,7 +237,7 @@ class WebService: NSObject {
     }
     
     func createBulkRating(jobId: Int, workerId: Int, parameters:[String:AnyObject], complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "/rating/createBulkRating"
+        let url = baseUrl + "rating/createBulkRating"
         SVProgressHUD.show()
         self.startRequest(.post, parameters: parameters, urlStr: url) { (response, isNull) in
             complete(response, isNull)
