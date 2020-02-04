@@ -25,7 +25,7 @@ class OnboardingViewController: StandardViewController {
     var questionLabel = standardLabel(text: "Çalışan mı arıyorsun?", size: 14.0, color: UIColorFromRGB(0x404259))
     var questionButton = UIButton()
     
-    var isEmployer: Bool = true
+    var isEmployer: Bool = false
     
     override func viewDidLoad() {
         navigationController?.navigationBar.isHidden = true

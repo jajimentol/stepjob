@@ -135,36 +135,37 @@ class RegisterViewController: StandardViewController {
                                   organization: companyField.textfield.text ?? "",
                                   password: passwordField.textfield.text ?? "")
     
-            WebService().employerRegister(parameters: request.parameters) { (response, error) in
+            WebService().employerRegister(parameters: request.parameters) { [weak self] (response, error) in
+                guard let strongSelf = self else { return }
                 if !error {
                     if let response:EmployerRegisterResponse = Mapper<EmployerRegisterResponse>().map(JSONObject:response) {
                         print(response)
+//                        employerUser = response
                         let vc = EmployerTabBarController()
-                        self.navigationController?.setViewControllers([vc], animated: true)
+                        strongSelf.navigationController?.setViewControllers([vc], animated: true)
                     }
                 }
             }
             
         } else {
-            
-        }
-        
-        let request = WorkerRegisterRequest()
-        request.makeParameter(email: mailField.textfield.text ?? "",
-                              fullName: companyField.textfield.text ?? "",
-                              password: passwordField.textfield.text ?? "",
-                              genderId: areaField.textfield.text == "ERKEK" ? 0 : 1)
-        WebService().workerRegister(parameters: request.parameters) { (response, error) in
-            if !error {
-                if let response: Worker = Mapper<Worker>().map(JSON: response) {
-                    print(response)
-                    let vc = MainViewController()
-                    self.navigationController?.setViewControllers([vc], animated: true)
-                    
+
+            let request = WorkerRegisterRequest()
+            request.makeParameter(email: mailField.textfield.text ?? "",
+                                  fullName: companyField.textfield.text ?? "",
+                                  password: passwordField.textfield.text ?? "",
+                                  genderId: areaField.textfield.text == "ERKEK" ? 0 : 1)
+            WebService().workerRegister(parameters: request.parameters) { [weak self] (response, error) in
+                guard let strongSelf = self else { return }
+                if !error {
+                    if let response: Worker = Mapper<Worker>().map(JSON: response) {
+                        print(response)
+                        let vc = MainViewController()
+                        strongSelf.navigationController?.setViewControllers([vc], animated: true)
+                        
+                    }
                 }
             }
         }
-        
     }
 }
 
