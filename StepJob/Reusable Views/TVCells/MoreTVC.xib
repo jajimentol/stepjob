@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoreTVC" rowHeight="128" id="KGk-i7-Jjw" customClass="MoreTVC" customModule="StepJob" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="368" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="368" height="128"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mE-yx-hoR">
+                        <rect key="frame" x="92" y="53.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="60" image="questionmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="imX-aG-BeH">
+                        <rect key="frame" x="32" y="63.5" width="40" height="1"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" id="6rF-sC-uC7"/>
+                            <constraint firstAttribute="width" constant="40" id="sbp-p4-3Ug"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4mE-yx-hoR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ImK-Ul-0Za"/>
+                    <constraint firstItem="imX-aG-BeH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="Sfx-Y6-658"/>
+                    <constraint firstItem="4mE-yx-hoR" firstAttribute="leading" secondItem="imX-aG-BeH" secondAttribute="trailing" constant="20" id="XtQ-7c-0uc"/>
+                    <constraint firstItem="imX-aG-BeH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kLi-Pr-3vI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="rowImage" destination="imX-aG-BeH" id="5Oi-Ob-gkR"/>
+                <outlet property="rowLabel" destination="4mE-yx-hoR" id="Ajj-SZ-rlO"/>
+            </connections>
+            <point key="canvasLocation" x="97.101449275362327" y="111.83035714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="questionmark.circle" catalog="system" width="64" height="60"/>
+    </resources>
+</document>
