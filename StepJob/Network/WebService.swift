@@ -106,6 +106,14 @@ class WebService: NSObject {
         }
     }
     
+    func cancelApplicationForJob(jobId: Int, complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
+        let url = baseUrl + "workers/jobs/\(jobId)/cancel-apply"
+        SVProgressHUD.show()
+        self.startRequest(.post, urlStr: url) { (response, isNull) in
+            complete(response, isNull)
+        }
+    }
+    
     func approveWorker(jobId: Int, workerId: Int, parameters:[String:AnyObject], complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
         let url = baseUrl + "employers/jobs/\(jobId)/approve-job-apply/\(workerId)"
         SVProgressHUD.show()

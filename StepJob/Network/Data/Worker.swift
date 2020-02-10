@@ -110,3 +110,25 @@ class Jobs: Mappable {
         jobs    <- map["data"]
     }
 }
+
+class MyJobsList: Mappable {
+    var jobs: [JobsWithStatus]?
+    
+    required init?(map: Map) {}
+    
+    func mapping(map: Map) {
+        jobs    <- map["data"]
+    }
+}
+
+class JobsWithStatus: Mappable {
+    var job: Job?
+    var status: String?
+    
+    required init?(map: Map) {}
+    
+    func mapping(map: Map) {
+        job    <- map["job"]
+        status    <- map["status"]
+    }
+}

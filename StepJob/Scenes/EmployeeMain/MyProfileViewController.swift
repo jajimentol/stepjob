@@ -26,7 +26,11 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var genderAgeLabel: UILabel!
     
-    var oldJobs: [Job]?
+    var oldJobs: [Job]? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
