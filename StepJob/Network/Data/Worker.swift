@@ -91,7 +91,7 @@ class Job: Mappable {
         status    <- map["status"]
         title    <- map["title"]
         workerCount    <- map["workerCount"]
-        employer    <- map["workerCount"]
+        employer    <- map["employer"]
         waitingJobApplies    <- map["waitingJobApplies"]
         approvedJobApplies    <- map["approvedJobApplies"]
         approvedJobs    <- map["approvedJobs"]

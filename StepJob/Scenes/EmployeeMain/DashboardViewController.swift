@@ -11,15 +11,7 @@ import ObjectMapper
 
 class DashboardViewController: StandardViewController {
     
-    var tableView = UITableView()
-    
-    var cityPicker = UIPickerView()
-    var countyPicker = UIPickerView()
-    var typePicker = UIPickerView()
-    
-    let cities = ["", "İstanbul", "Ankara", "İzmir"]
-    let counties = ["", "Kadıköy", "Üsküdar", "Dikmen", "Bornova"]
-    let types = ["", "Günlük", "Günlük Kiralık", "Mevsimlik"]
+    var tableView = UITableView(frame: .zero, style: .grouped)
     
     var cityField: UITextField!
     var countyField: UITextField!
@@ -28,6 +20,12 @@ class DashboardViewController: StandardViewController {
     var jobs: [Job]? {
         didSet {
             tableView.reloadData()
+        }
+    }
+    
+    var topJobs: [Job]? {
+        didSet{
+            (tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! CollectionViewTVC).collectionView.reloadData()
         }
     }
     
@@ -55,22 +53,14 @@ class DashboardViewController: StandardViewController {
     func setInterface() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "DashboardHeaderTVC", bundle: nil), forCellReuseIdentifier: "DashboardHeaderTVC")
+        tableView.separatorStyle = .none
+//        tableView.register(UINib(nibName: "DashboardHeaderTVC", bundle: nil), forCellReuseIdentifier: "DashboardHeaderTVC")
         tableView.register(UINib(nibName: "DashboardJobTVC", bundle: nil), forCellReuseIdentifier: "DashboardJobTVC")
         tableView.register(UINib(nibName: "CollectionViewTVC", bundle: nil), forCellReuseIdentifier: "CollectionViewTVC")
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
-            make.left.right.top.bottom.equalTo(view)
+            make.left.right.bottom.top.equalTo(view)
         }
-        
-        cityPicker.delegate = self
-        cityPicker.dataSource = self
-        
-        countyPicker.delegate = self
-        countyPicker.dataSource = self
-        
-        typePicker.delegate = self
-        typePicker.dataSource = self
     }
     
     func setTargets() {
@@ -79,12 +69,18 @@ class DashboardViewController: StandardViewController {
     func getJobs() {
         
         WebService().workerJobs { [weak self] (response, error) in
-            guard let strongSelf = self else { return }
+            guard let strongSelf = self else { return }
             if !error, let jobs = Mapper<Jobs>().map(JSONObject: response) {
                 strongSelf.jobs = jobs.jobs
             }
         }
         
+        WebService().getPopularWorkerJobs { [weak self] (response, error) in
+            guard let strongSelf = self else { return }
+            if !error, let topJobs = Mapper<Jobs>().map(JSONObject: response) {
+                strongSelf.topJobs = topJobs.jobs
+            }
+        }
     }
     
 }
@@ -93,40 +89,28 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
-        } else if section == 2 {
-            return jobs?.count ?? 0
         } else if section == 1 {
-            return 1
+            return jobs?.count ?? 0
         } else {return 0}
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardHeaderTVC", for: indexPath) as! DashboardHeaderTVC
-            cell.setDelegates(cityPicker: cityPicker, countyPicker: countyPicker, typePicker: typePicker)
-            let set: () -> () = { [weak self] in
-                self?.cityField = cell.cityField
-                self?.countyField = cell.countyField
-                self?.typeField = cell.typeField
-            }
-            set()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionViewTVC", for: indexPath) as! CollectionViewTVC
+            cell.collectionView.delegate = self
+            cell.collectionView.dataSource = self
             return cell
-        } else if indexPath.section == 2 {
+        } else if indexPath.section == 1 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardJobTVC",
                                                         for: indexPath) as? DashboardJobTVC,
                 let job = jobs?[indexPath.row] {
                     cell.fillCell(with: job)
                     return cell
             }
-        } else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionViewTVC", for: indexPath) as! CollectionViewTVC
-            cell.collectionView.delegate = self
-            cell.collectionView.dataSource = self
-            return cell
         }
         return UITableViewCell()
     }
@@ -135,52 +119,35 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = JobDetailViewController(nibName: "JobDetailViewController", bundle: nil)
         navigationController?.pushViewController(vc, animated: true)
     }
-}
-
-extension DashboardViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == cityPicker {
-            return cities.count
-        } else if pickerView == countyPicker {
-            return counties.count
-        } else if pickerView == typePicker {
-            return types.count
-        } else { return 0 }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == cityPicker {
-            return cities[row]
-        } else if pickerView == countyPicker {
-            return counties[row]
-        } else if pickerView == typePicker {
-            return types[row]
-        } else { return "" }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == cityPicker {
-            cityField?.text = cities[row]
-        } else if pickerView == countyPicker {
-            countyField?.text = counties[row]
-        } else if pickerView == typePicker {
-            typeField?.text = types[row]
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 1 {
+            return "Sana Uygun İlanlar"
+        } else if section == 0 {
+            return "En Popüler İlanlar"
         }
+        return ""
     }
 }
 
 extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return topJobs?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CircleWithLabelCVC", for: indexPath) as! CircleWithLabelCVC
-        cell.fillCell(type: indexPath.item)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularJobCVC", for: indexPath) as! PopularJobCVC
+        if let data = topJobs?[indexPath.row] {
+            cell.fillCell(with: data)
+        }
         return cell
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        if kind == UICollectionView.elementKindSectionHeader {
+//            let titleLabel = UILabel()
+//            titleLabel.text = "En Popüler İlanlar"
+//            return (titleLabel as! UICollectionReusableView)
+//        }
+//    }
 }

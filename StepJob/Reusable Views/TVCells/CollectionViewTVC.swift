@@ -16,10 +16,12 @@ class CollectionViewTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        layout.itemSize = CGSize(width: 100, height: 110)
+        layout.itemSize = CGSize(width: 130, height: 140)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         layout.scrollDirection = .horizontal
         
         collectionView.register(UINib(nibName: "CircleWithLabelCVC", bundle: nil), forCellWithReuseIdentifier: "CircleWithLabelCVC")
+        collectionView.register(UINib(nibName: "PopularJobCVC", bundle: nil), forCellWithReuseIdentifier: "PopularJobCVC")
         collectionView.setCollectionViewLayout(layout, animated: false)
     }
 }

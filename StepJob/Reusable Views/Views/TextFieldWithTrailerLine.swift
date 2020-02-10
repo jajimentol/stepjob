@@ -39,7 +39,7 @@ class TextFieldWithTrailerLine: UIView {
         textfield.adjustsFontSizeToFitWidth = true
         addSubview(textfield)
         textfield.snp.makeConstraints { (make) in
-            make.left.equalTo(titleLabel).offset(8)
+            make.left.equalTo(titleLabel)
             make.right.equalTo(self).offset(-8)
             make.top.equalTo(titleLabel.snp.bottom).offset(6)
             make.bottom.equalTo(self)

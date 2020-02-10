@@ -12,6 +12,7 @@ class MainViewController: UITabBarController {
     
     var dashboardVC = DashboardViewController()
     var messagesVC = MessagesViewController()
+    var jobsVC = UIViewController()
     var profileVC = MyProfileViewController(nibName: "MyProfileViewController", bundle: nil)
     var moreVC = MoreViewController()
     
@@ -24,6 +25,13 @@ class MainViewController: UITabBarController {
                                               selectedImage: dashboardImage.withRenderingMode(.alwaysTemplate))
         
         dashboardVC.tabBarItem = dashboardTabBarItem
+        
+        let jobsImage = resizeImage(image: UIImage(named: "task")!, targetSize: CGSize(width: 28, height: 28))
+        let jobsTabBarItem = UITabBarItem(title: "İşlerim",
+                                          image: jobsImage,
+                                          selectedImage: jobsImage)
+        jobsTabBarItem.badgeColor = UIColor.red
+        jobsVC.tabBarItem = jobsTabBarItem
         
         let messagesImage = resizeImage(image: UIImage(named: "chat")!, targetSize: CGSize(width: 28, height: 28))
         let messagesTabBarItem = UITabBarItem(title: "Messages",
@@ -44,7 +52,7 @@ class MainViewController: UITabBarController {
                                            selectedImage: moreImage.withRenderingMode(.alwaysTemplate))
         moreVC.tabBarItem = moreTabBarItem
         
-        let tabBarList: [UIViewController] = [dashboardVC, messagesVC, profileVC, moreVC]
+        let tabBarList: [UIViewController] = [dashboardVC, jobsVC, messagesVC, profileVC, moreVC]
         viewControllers = tabBarList
     }
     

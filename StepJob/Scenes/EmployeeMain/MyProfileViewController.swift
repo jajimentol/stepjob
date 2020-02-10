@@ -88,8 +88,6 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardJobTVC", for: indexPath) as! DashboardJobTVC
         if let job = oldJobs?[indexPath.row] {
             cell.fillCell(with: job)
-        } else {
-            cell.fillCell(job: "Yazılım Geliştirme Elemanı", company: "ROTA İNTERNET TEKNOLOJİ HİZMETLERİ", location: "İstanbul(Asya)", price: "100₺")
         }
         return cell
     }

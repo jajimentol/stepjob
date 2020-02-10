@@ -84,7 +84,14 @@ class WebService: NSObject {
     }
     
     func workerJobs(complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
-        let url = baseUrl + "worker/jobs"
+        let url = baseUrl + "workers/jobs/filter?page=0&size=5"
+        SVProgressHUD.show()
+        self.startRequest(.get, urlStr: url) { (response, isNull) in
+            complete(response, isNull)
+        }
+    }
+    func getPopularWorkerJobs(complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
+        let url = baseUrl + "workers/jobs/top-jobs"
         SVProgressHUD.show()
         self.startRequest(.get, urlStr: url) { (response, isNull) in
             complete(response, isNull)

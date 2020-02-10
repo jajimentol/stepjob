@@ -1,29 +1,31 @@
 //
-//  DashboardJobTVC.swift
+//  PopularJobCVC.swift
 //  StepJob
 //
-//  Created by Sirius on 23.10.2019.
-//  Copyright © 2019 Stepjob. All rights reserved.
+//  Created by Sirius on 10.02.2020.
+//  Copyright © 2020 Stepjob. All rights reserved.
 //
 
 import UIKit
 
-class DashboardJobTVC: UITableViewCell {
-    
+class PopularJobCVC: UICollectionViewCell {
+
     @IBOutlet weak var jobImage: UIImageView!
-    @IBOutlet weak var jobLabel: UILabel!
+    
+    @IBOutlet weak var jobNameLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var jobTypeLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        jobImage.contentMode = .scaleToFill
         
+        layer.cornerRadius = 4.0
+        jobImage.layer.cornerRadius = 4.0
+        jobImage.clipsToBounds = true
     }
-    
+
     func fillCell(with job: Job) {
         
         let url = URL(string: job.employer?.profilePicture ?? "")
@@ -35,15 +37,11 @@ class DashboardJobTVC: UITableViewCell {
             }
         }
         
-        jobLabel.text = job.title
+        jobNameLabel.text = job.title
         companyLabel.text = job.employer?.organizationName
         locationLabel.text = job.location
-        jobTypeLabel.text = job.jobType
-        if job.jobType == "Dönemsel" {
-            priceLabel.text = "İşin tamamı: " + (job.price ?? "")
-        } else {
-            priceLabel.text = "Günlük: " + (job.price ?? "")
-        }
+        priceLabel.text = "Günlük: " + (job.price ?? "")
         
     }
+    
 }
