@@ -60,6 +60,7 @@ class MyProfileViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "DashboardJobTVC", bundle: nil), forCellReuseIdentifier: "DashboardJobTVC")
         tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
         
         messageButton.isHidden = true
         confirmButton.isHidden = true

@@ -12,7 +12,7 @@ class MainViewController: UITabBarController {
     
     var dashboardVC = DashboardViewController()
     var messagesVC = MessagesViewController()
-    var jobsVC = UIViewController()
+    var jobsVC = MyJobsViewController(nibName: "MyJobsViewController", bundle: nil)
     var profileVC = MyProfileViewController(nibName: "MyProfileViewController", bundle: nil)
     var moreVC = MoreViewController()
     

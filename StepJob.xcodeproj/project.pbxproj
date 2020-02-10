@@ -60,6 +60,10 @@
 		3685951123CCA63200344273 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3685951023CCA63200344273 /* Worker.swift */; };
 		36ACC25723F1353D001A895A /* PopularJobCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ACC25523F1353D001A895A /* PopularJobCVC.swift */; };
 		36ACC25823F1353D001A895A /* PopularJobCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36ACC25623F1353D001A895A /* PopularJobCVC.xib */; };
+		36ACC25B23F15999001A895A /* MyJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ACC25923F15999001A895A /* MyJobsViewController.swift */; };
+		36ACC25C23F15999001A895A /* MyJobsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36ACC25A23F15999001A895A /* MyJobsViewController.xib */; };
+		36ACC25F23F15CAD001A895A /* MyJobCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ACC25D23F15CAD001A895A /* MyJobCVC.swift */; };
+		36ACC26023F15CAD001A895A /* MyJobCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36ACC25E23F15CAD001A895A /* MyJobCVC.xib */; };
 		36B0DCEB239E30DB00E88FDB /* AdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B0DCEA239E30DB00E88FDB /* AdViewController.swift */; };
 		36B0DCED239E3A9700E88FDB /* AdDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B0DCEC239E3A9700E88FDB /* AdDescriptionViewController.swift */; };
 		36B0DCEF239E4D9F00E88FDB /* AdTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B0DCEE239E4D9F00E88FDB /* AdTimeViewController.swift */; };
@@ -143,6 +147,10 @@
 		3685951023CCA63200344273 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		36ACC25523F1353D001A895A /* PopularJobCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularJobCVC.swift; sourceTree = "<group>"; };
 		36ACC25623F1353D001A895A /* PopularJobCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularJobCVC.xib; sourceTree = "<group>"; };
+		36ACC25923F15999001A895A /* MyJobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJobsViewController.swift; sourceTree = "<group>"; };
+		36ACC25A23F15999001A895A /* MyJobsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyJobsViewController.xib; sourceTree = "<group>"; };
+		36ACC25D23F15CAD001A895A /* MyJobCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJobCVC.swift; sourceTree = "<group>"; };
+		36ACC25E23F15CAD001A895A /* MyJobCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyJobCVC.xib; sourceTree = "<group>"; };
 		36B0DCEA239E30DB00E88FDB /* AdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewController.swift; sourceTree = "<group>"; };
 		36B0DCEC239E3A9700E88FDB /* AdDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDescriptionViewController.swift; sourceTree = "<group>"; };
 		36B0DCEE239E4D9F00E88FDB /* AdTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTimeViewController.swift; sourceTree = "<group>"; };
@@ -307,6 +315,8 @@
 				36FF970223C75C360081D14B /* CircleWithLabelCVC.xib */,
 				36ACC25523F1353D001A895A /* PopularJobCVC.swift */,
 				36ACC25623F1353D001A895A /* PopularJobCVC.xib */,
+				36ACC25D23F15CAD001A895A /* MyJobCVC.swift */,
+				36ACC25E23F15CAD001A895A /* MyJobCVC.xib */,
 			);
 			path = CVCells;
 			sourceTree = "<group>";
@@ -410,6 +420,8 @@
 				360BC3EE2393BAAF00D7BA5C /* MessagesViewController.swift */,
 				360BC3F62393BE6D00D7BA5C /* MessageDetailViewController.swift */,
 				36FF96FB23C75AE60081D14B /* MoreViewController.swift */,
+				36ACC25923F15999001A895A /* MyJobsViewController.swift */,
+				36ACC25A23F15999001A895A /* MyJobsViewController.xib */,
 			);
 			path = EmployeeMain;
 			sourceTree = "<group>";
@@ -513,12 +525,14 @@
 				36ACC25823F1353D001A895A /* PopularJobCVC.xib in Resources */,
 				36B0DCF9239E746F00E88FDB /* SingleLabelCVC.xib in Resources */,
 				362C0E7F23604FD5007D6E3C /* DashboardJobTVC.xib in Resources */,
+				36ACC26023F15CAD001A895A /* MyJobCVC.xib in Resources */,
 				362C0E8F2360626E007D6E3C /* MyProfileViewController.xib in Resources */,
 				36C60533236AF3CC00B09526 /* Employer.storyboard in Resources */,
 				360BC4012393C64400D7BA5C /* Assets.xcassets in Resources */,
 				3680B2E023716E0900A701D3 /* SingleEmployeeTVC.xib in Resources */,
 				36DCBCC923718381002322B7 /* GoogleService-Info.plist in Resources */,
 				299DB112228EE68500E2F321 /* LaunchScreen.storyboard in Resources */,
+				36ACC25C23F15999001A895A /* MyJobsViewController.xib in Resources */,
 				36C60539236AF48D00B09526 /* EmployerDashboardTVC.xib in Resources */,
 				360991172353523800DA67C8 /* OnboardingImageCVC.xib in Resources */,
 				362C0E8B23605A00007D6E3C /* JobDetailViewController.xib in Resources */,
@@ -612,6 +626,7 @@
 				29759B34228ED19D00EE48AA /* PageViewController.swift in Sources */,
 				3609910F23534C5E00DA67C8 /* EmployerUpdateProfileRequest.swift in Sources */,
 				362C0E8223605453007D6E3C /* DashboardHeaderTVC.swift in Sources */,
+				36ACC25F23F15CAD001A895A /* MyJobCVC.swift in Sources */,
 				3609911B23536C0600DA67C8 /* RegisterViewController.swift in Sources */,
 				36FF96FF23C75BF70081D14B /* CollectionViewTVC.swift in Sources */,
 				362C0E8A23605A00007D6E3C /* JobDetailViewController.swift in Sources */,
@@ -628,6 +643,7 @@
 				36FF970323C75C360081D14B /* CircleWithLabelCVC.swift in Sources */,
 				36C60531236AF2D300B09526 /* EmployerTabBarController.swift in Sources */,
 				36B2144523B20A28006D4397 /* CreateJobRequest.swift in Sources */,
+				36ACC25B23F15999001A895A /* MyJobsViewController.swift in Sources */,
 				36B0DCF8239E746F00E88FDB /* SingleLabelCVC.swift in Sources */,
 				36B0DCF3239E4E2100E88FDB /* RadioChoiceView.swift in Sources */,
 				360BC3FA2393BEE900D7BA5C /* SelfMessageTVC.swift in Sources */,
