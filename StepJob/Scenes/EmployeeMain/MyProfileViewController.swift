@@ -14,6 +14,7 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var messageButton: UIButton!
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var callButton: UIButton!
@@ -38,18 +39,34 @@ class MyProfileViewController: UIViewController {
     }
     
     func setInterface() {
+        
+        let url = URL(string: workerUser?.profilePicture ?? "")
+        DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url!) {
+                DispatchQueue.main.async {
+                    self.userImage.image = UIImage(data: data)
+                }
+            }
+        }
+        
+        userImage.layer.borderColor = UIColor.white.cgColor
+        userImage.layer.borderWidth = 2.0
+        userImage.layer.cornerRadius = 40.0
+        userImage.clipsToBounds = true
+        
         editButton.layer.cornerRadius = 25.0
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "DashboardJobTVC", bundle: nil), forCellReuseIdentifier: "DashboardJobTVC")
+        tableView.showsVerticalScrollIndicator = false
         
         messageButton.isHidden = true
         confirmButton.isHidden = true
         callButton.isHidden = true
         
         nameLabel.text = workerUser?.fullName
-        jobCountLabel.text = String(workerUser?.jobs?.count ?? 0)
+        jobCountLabel.text = String(workerUser?.jobCount ?? 0)
         ratingLabel.text = String(Double(workerUser?.rating ?? 5))
         locationLabel.text = workerUser?.location
         genderAgeLabel.text = (workerUser?.gender ?? "Belirtilmemiş") + ", " + String(workerUser?.age ?? 0)
@@ -64,7 +81,13 @@ class MyProfileViewController: UIViewController {
             if !error, let worker = Mapper<Worker>().map(JSONObject: response) {
                 workerUser = worker
                 strongSelf.setInterface()
-                strongSelf.oldJobs = worker.jobs
+            }
+        }
+        
+        WebService().getWorkerJobs { [weak self] (response, error) in
+            guard let strongSelf = self else { return }
+            if !error, let jobs = Mapper<Jobs>().map(JSONObject: response) {
+                strongSelf.oldJobs = jobs.jobs
             }
         }
     }

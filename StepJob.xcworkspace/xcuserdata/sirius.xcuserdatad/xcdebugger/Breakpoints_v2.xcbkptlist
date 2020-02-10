@@ -30,9 +30,25 @@
             filePath = "StepJob/Network/WebService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
-            landmarkName = "startRequest(_:parameters:urlStr:completionHandler:)"
+            startingLineNumber = "343"
+            endingLineNumber = "343"
+            landmarkName = "startRequest(_:urlStr:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D5E6951-C400-4A7D-9F53-0A9317BF3C80"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StepJob/Scenes/EmployeeMain/MyProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "getUser()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

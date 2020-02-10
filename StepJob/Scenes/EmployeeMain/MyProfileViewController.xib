@@ -21,6 +21,7 @@
                 <outlet property="nameLabel" destination="TLR-SI-u7t" id="GdZ-zQ-Wo0"/>
                 <outlet property="ratingLabel" destination="vHL-KK-NbC" id="GBJ-l3-mMV"/>
                 <outlet property="tableView" destination="wWH-0c-ypD" id="821-jB-IU3"/>
+                <outlet property="userImage" destination="JUt-tg-uL5" id="RT3-LC-NbT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,61 +34,62 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="po3-qI-MfX">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="849"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="832"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="listheader" translatesAutoresizingMaskIntoConstraints="NO" id="GOh-4P-N5b">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="245"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GOh-4P-N5b">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                    <color key="backgroundColor" red="0.054901960780000002" green="0.1058823529" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="245" id="rwa-f7-kvr"/>
+                                        <constraint firstAttribute="height" constant="120" id="rwa-f7-kvr"/>
                                     </constraints>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="JUt-tg-uL5">
-                                    <rect key="frame" x="167" y="40" width="80" height="80"/>
+                                    <rect key="frame" x="167" y="60" width="80" height="80"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="80" id="GjF-Tq-cD0"/>
                                         <constraint firstAttribute="width" constant="80" id="guq-M6-uEO"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anıl Turan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLR-SI-u7t">
-                                    <rect key="frame" x="164.5" y="136" width="85" height="23"/>
+                                    <rect key="frame" x="164.5" y="152" width="85" height="23"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Görevler" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2C-RA-Wlv">
-                                    <rect key="frame" x="60" y="204" width="65.5" height="21"/>
+                                    <rect key="frame" x="60" y="199" width="65.5" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6re-fM-aia">
-                                    <rect key="frame" x="206.5" y="194.5" width="1" height="40"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="206.5" y="189.5" width="1" height="40"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="1" id="RLm-FF-Is1"/>
                                         <constraint firstAttribute="height" constant="40" id="kpU-Mn-qcI"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p61-Yb-MCY">
-                                    <rect key="frame" x="295.5" y="204" width="38.5" height="21"/>
+                                    <rect key="frame" x="295.5" y="199" width="38.5" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y10-aJ-vIR">
-                                    <rect key="frame" x="87.5" y="181" width="10.5" height="21"/>
+                                    <rect key="frame" x="87.5" y="176" width="10.5" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHL-KK-NbC">
-                                    <rect key="frame" x="302.5" y="181" width="24.5" height="21"/>
+                                    <rect key="frame" x="302.5" y="176" width="24.5" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jv1-vb-nXd">
-                                    <rect key="frame" x="20" y="257" width="374" height="50"/>
+                                    <rect key="frame" x="20" y="240" width="374" height="50"/>
                                     <color key="backgroundColor" red="0.98823529409999999" green="0.2784313725" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="WfK-n3-kdS"/>
@@ -98,13 +100,13 @@
                                     </state>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hakkımda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRf-xn-qCg">
-                                    <rect key="frame" x="20" y="323" width="78.5" height="21"/>
+                                    <rect key="frame" x="20" y="306" width="78.5" height="21"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQq-eX-luc">
-                                    <rect key="frame" x="20" y="352" width="374" height="72"/>
+                                    <rect key="frame" x="20" y="335" width="374" height="72"/>
                                     <string key="text">Boğaziçi Üniversitesi İnşaat Mühendisliği okuyorum. Daha önce part-time tasarımcılık ve barmenlik işleri yaptım.
 Okul harçlığımı çıkartmak için iş arıyorum.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -112,54 +114,54 @@ Okul harçlığımı çıkartmak için iş arıyorum.</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="qLH-WY-txr">
-                                    <rect key="frame" x="20" y="440" width="22" height="22"/>
+                                    <rect key="frame" x="20" y="423" width="22" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="22" id="VfO-cC-rZT"/>
                                         <constraint firstAttribute="height" constant="22" id="d63-0J-MFx"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sarıyer, İstanbul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kp6-Fy-R5H">
-                                    <rect key="frame" x="50" y="443" width="97" height="16"/>
+                                    <rect key="frame" x="50" y="426" width="97" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat" translatesAutoresizingMaskIntoConstraints="NO" id="Gs5-Pr-rWv">
-                                    <rect key="frame" x="20" y="470" width="22" height="22"/>
+                                    <rect key="frame" x="20" y="453" width="22" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="22" id="H8I-oR-jRz"/>
                                         <constraint firstAttribute="width" constant="22" id="odK-8R-9im"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Erkek, 25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iP-hh-Ema">
-                                    <rect key="frame" x="50" y="473" width="57" height="16"/>
+                                    <rect key="frame" x="50" y="456" width="57" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wWH-0c-ypD">
-                                    <rect key="frame" x="0.0" y="499" width="414" height="350"/>
+                                    <rect key="frame" x="0.0" y="482" width="414" height="350"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" priority="750" constant="350" id="lyK-nb-1VJ"/>
                                     </constraints>
                                 </tableView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fl-Io-dQS">
-                                    <rect key="frame" x="20" y="257" width="103.5" height="50"/>
+                                    <rect key="frame" x="20" y="240" width="103.5" height="50"/>
                                     <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="Mesaj At">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akr-62-HZu">
-                                    <rect key="frame" x="155.5" y="257" width="103.5" height="50"/>
+                                    <rect key="frame" x="155.5" y="240" width="103.5" height="50"/>
                                     <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="Ara">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jx-1c-rE5">
-                                    <rect key="frame" x="275" y="257" width="123" height="50"/>
+                                    <rect key="frame" x="275" y="240" width="123" height="50"/>
                                     <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="Onayla">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -174,12 +176,12 @@ Okul harçlığımı çıkartmak için iş arıyorum.</string>
                                 <constraint firstItem="Gs5-Pr-rWv" firstAttribute="top" secondItem="qLH-WY-txr" secondAttribute="bottom" constant="8" id="5Oa-lO-ezq"/>
                                 <constraint firstItem="p61-Yb-MCY" firstAttribute="centerY" secondItem="G2C-RA-Wlv" secondAttribute="centerY" id="6zk-bG-Acg"/>
                                 <constraint firstAttribute="trailing" secondItem="GOh-4P-N5b" secondAttribute="trailing" id="70G-Xs-LfT"/>
-                                <constraint firstItem="JUt-tg-uL5" firstAttribute="top" secondItem="po3-qI-MfX" secondAttribute="top" constant="40" id="7Yz-W4-b4D"/>
-                                <constraint firstItem="G2C-RA-Wlv" firstAttribute="bottom" secondItem="GOh-4P-N5b" secondAttribute="bottom" constant="-20" id="7ug-a6-QIg"/>
+                                <constraint firstItem="JUt-tg-uL5" firstAttribute="top" secondItem="po3-qI-MfX" secondAttribute="top" constant="60" id="7Yz-W4-b4D"/>
+                                <constraint firstItem="G2C-RA-Wlv" firstAttribute="bottom" secondItem="GOh-4P-N5b" secondAttribute="bottom" constant="100" id="7ug-a6-QIg"/>
                                 <constraint firstItem="9Jx-1c-rE5" firstAttribute="centerY" secondItem="akr-62-HZu" secondAttribute="centerY" id="8HM-UD-Srh"/>
                                 <constraint firstItem="G2C-RA-Wlv" firstAttribute="top" secondItem="y10-aJ-vIR" secondAttribute="bottom" constant="2" id="9QQ-3U-QLo"/>
                                 <constraint firstItem="G2C-RA-Wlv" firstAttribute="leading" secondItem="po3-qI-MfX" secondAttribute="leading" constant="60" id="AXc-Xu-pEt"/>
-                                <constraint firstItem="TLR-SI-u7t" firstAttribute="top" secondItem="JUt-tg-uL5" secondAttribute="bottom" constant="16" id="CId-eU-IgF"/>
+                                <constraint firstItem="TLR-SI-u7t" firstAttribute="top" secondItem="JUt-tg-uL5" secondAttribute="bottom" constant="12" id="CId-eU-IgF"/>
                                 <constraint firstItem="akr-62-HZu" firstAttribute="centerY" secondItem="2Fl-Io-dQS" secondAttribute="centerY" id="CL7-gY-oNq"/>
                                 <constraint firstItem="FQq-eX-luc" firstAttribute="top" secondItem="VRf-xn-qCg" secondAttribute="bottom" constant="8" id="DyB-ax-JvP"/>
                                 <constraint firstItem="9Jx-1c-rE5" firstAttribute="height" secondItem="akr-62-HZu" secondAttribute="height" id="EPV-u7-3Ko"/>
@@ -205,7 +207,7 @@ Okul harçlığımı çıkartmak için iş arıyorum.</string>
                                 <constraint firstItem="TLR-SI-u7t" firstAttribute="centerX" secondItem="JUt-tg-uL5" secondAttribute="centerX" id="jOX-7S-hAc"/>
                                 <constraint firstItem="2Fl-Io-dQS" firstAttribute="leading" secondItem="jv1-vb-nXd" secondAttribute="leading" id="jZc-Sd-qqx"/>
                                 <constraint firstItem="jv1-vb-nXd" firstAttribute="leading" secondItem="po3-qI-MfX" secondAttribute="leading" constant="20" id="k7K-Jt-UQt"/>
-                                <constraint firstItem="jv1-vb-nXd" firstAttribute="top" secondItem="GOh-4P-N5b" secondAttribute="bottom" constant="12" id="kJz-mQ-8Fg"/>
+                                <constraint firstItem="jv1-vb-nXd" firstAttribute="top" secondItem="GOh-4P-N5b" secondAttribute="bottom" constant="120" id="kJz-mQ-8Fg"/>
                                 <constraint firstItem="GOh-4P-N5b" firstAttribute="leading" secondItem="po3-qI-MfX" secondAttribute="leading" id="kzD-ep-KAX"/>
                                 <constraint firstItem="akr-62-HZu" firstAttribute="width" secondItem="2Fl-Io-dQS" secondAttribute="width" id="pB2-m6-om4"/>
                                 <constraint firstItem="6re-fM-aia" firstAttribute="centerX" secondItem="JUt-tg-uL5" secondAttribute="centerX" id="r6N-bf-Qzm"/>
@@ -245,7 +247,6 @@ Okul harçlığımı çıkartmak için iş arıyorum.</string>
     <resources>
         <image name="chat" width="24" height="24"/>
         <image name="home" width="120" height="115"/>
-        <image name="listheader" width="960" height="458"/>
         <image name="profile" width="48" height="48"/>
     </resources>
 </document>
