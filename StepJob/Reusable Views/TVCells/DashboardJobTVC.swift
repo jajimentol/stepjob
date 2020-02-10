@@ -21,7 +21,7 @@ class DashboardJobTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        
+        selectionStyle = .none
     }
     
     func fillCell(with job: Job) {

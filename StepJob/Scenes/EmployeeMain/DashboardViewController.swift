@@ -117,6 +117,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = JobDetailViewController(nibName: "JobDetailViewController", bundle: nil)
+        vc.jobData = jobs?[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
     

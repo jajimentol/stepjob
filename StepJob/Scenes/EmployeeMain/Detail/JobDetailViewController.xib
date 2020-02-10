@@ -13,6 +13,7 @@
                 <outlet property="applyLabel" destination="9b8-KW-ncg" id="ta2-AJ-F1Y"/>
                 <outlet property="descriptionLabel" destination="XO8-cv-njy" id="tde-p3-XUi"/>
                 <outlet property="editButton" destination="uJt-6a-1va" id="yDX-Ql-w9d"/>
+                <outlet property="jobImage" destination="DoT-xA-WjR" id="nCx-UX-HPj"/>
                 <outlet property="jobNameLabel" destination="Abl-8n-QcO" id="xO4-nn-HRB"/>
                 <outlet property="locationLabel" destination="i9I-fu-QJZ" id="JEQ-Z6-Xxe"/>
                 <outlet property="organizationNameLabel" destination="9Pr-1v-va8" id="MaC-b3-HF5"/>
@@ -56,7 +57,7 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İstanbul(Asya)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9I-fu-QJZ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İstanbul(Asya)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9I-fu-QJZ">
                                             <rect key="frame" x="122" y="120" width="262" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

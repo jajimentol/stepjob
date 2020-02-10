@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class JobDetailViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
@@ -14,6 +15,7 @@ class JobDetailViewController: UIViewController {
     var isEmployer: Bool = false
     var jobData: Job?
     
+    @IBOutlet weak var jobImage: UIImageView!
     @IBOutlet weak var jobNameLabel: UILabel!
     @IBOutlet weak var organizationNameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -35,7 +37,18 @@ class JobDetailViewController: UIViewController {
         super.viewDidLoad()
         title = "İlan Detayı"
         submitButton.layer.cornerRadius = 8.0
-        setInterface()
+    
+        getJobDetail()
+    }
+    
+    func getJobDetail() {
+        WebService().getWorkerJobDetail(jobId: jobData?.id ?? 0) { [weak self] (response, error) in
+            guard let strongSelf = self else { return }
+            if !error, let job = Mapper<Job>().map(JSON: response) {
+                strongSelf.jobData = job
+                strongSelf.setInterface()
+            }
+        }
     }
     
     func setInterface() {
@@ -53,15 +66,28 @@ class JobDetailViewController: UIViewController {
     }
     
     func fillScene() {
+        
+        let url = URL(string: jobData?.employer?.profilePicture ?? "")
+        DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url!) {
+                DispatchQueue.main.async {
+                    self.jobImage.image = UIImage(data: data)
+                }
+            }
+        }
+        
         title = jobData?.title
         jobNameLabel.text = jobData?.title
         organizationNameLabel.text = jobData?.employer?.organizationName
-        locationLabel.text = jobData?.location
+        locationLabel.text = jobData?.address
         priceLabel.text = jobData?.price
         typeLabel.text = jobData?.jobType
         timeLabel.text = jobData?.creationDate
         applyLabel.text = String(jobData?.workerCount ?? "0") + " Başvuru"
         descriptionLabel.text = jobData?.description
+        
+        jobImage.layer.cornerRadius = 4.0
+        jobImage.clipsToBounds = true
         
     }
     @IBAction func submitTapped(_ sender: Any) {

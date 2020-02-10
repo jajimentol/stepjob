@@ -155,6 +155,14 @@ class WebService: NSObject {
         }
     }
     
+    func getWorkerJobDetail(jobId: Int, complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
+        let url = baseUrl + "workers/jobs/\(jobId)/detail"
+        SVProgressHUD.show()
+        self.startRequest(.get, urlStr: url) { (response, isNull) in
+            complete(response, isNull)
+        }
+    }
+    
     func lookupActivityAreas(complete:@escaping ([String:AnyObject], Bool) -> ()) ->() {
         let url = baseUrl + "lookup/job/activity-areas"
         SVProgressHUD.show()
