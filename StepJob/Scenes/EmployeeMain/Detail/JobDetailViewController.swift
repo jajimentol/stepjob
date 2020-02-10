@@ -99,8 +99,8 @@ class JobDetailViewController: UIViewController {
     @IBAction func submitTapped(_ sender: Any) {
         WebService().applyForJob(jobId: jobData?.id ?? 0) { [weak self] (response, error) in
             guard let strongSelf = self else { return }
-            strongSelf.navigationController?.popViewController(animated: true)
         }
+        navigationController?.popViewController(animated: true)
         
     }
 }

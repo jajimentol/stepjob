@@ -16,17 +16,19 @@ class MyJobsViewController: UIViewController {
     
     var layout = UICollectionViewFlowLayout()
     
-    var appliedJobs: [JobsWithStatus]? {
+    var appliedJobs: [JobsWithStatus]?
+    var waitingJobs: [JobsWithStatus]? {
         didSet {
             collectionView.reloadData()
         }
     }
-    var waitingJobs: [JobsWithStatus]?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getJobs()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getJobs()
         
         let width = (view.frame.width - 60) / 2
         let heigth = width
@@ -38,7 +40,7 @@ class MyJobsViewController: UIViewController {
         collectionView.register(UINib(nibName: "MyJobCVC", bundle: nil), forCellWithReuseIdentifier: "MyJobCVC")
     }
     
-    func getJobs() {
+    @objc func getJobs() {
         
         WebService().getJobsByStatus(status: "APPROVED") { [weak self] (response, error) in
             guard let strongSelf = self else { return }
@@ -95,8 +97,8 @@ extension MyJobsViewController: MyJobApplicationDelegate {
         WebService().cancelApplicationForJob(jobId: jobId) { [weak self] (response, error) in
             guard let strongSelf = self else { return }
             if !error {
-                strongSelf.getJobs()
             }
         }
+        perform(#selector(getJobs), with: nil, afterDelay: 0.2)
     }
 }
