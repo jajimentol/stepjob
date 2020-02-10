@@ -73,7 +73,7 @@ class RegisterViewController: StandardViewController {
         addToolBar(textField: mailField.textfield)
         scrollView.addSubview(mailField)
         mailField.snp.makeConstraints { (make) in
-            make.left.equalTo(titleLabel)
+            make.left.equalTo(view)
             make.top.equalTo(titleLabel.snp.bottom).offset(32)
             make.right.equalTo(view).offset(-24)
             make.height.equalTo(50)
@@ -116,7 +116,8 @@ class RegisterViewController: StandardViewController {
         scrollView.addSubview(submitButton)
         submitButton.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         submitButton.snp.makeConstraints { (make) in
-            make.left.right.equalTo(mailField)
+            make.right.equalTo(mailField)
+            make.left.equalTo(mailField).offset(24)
             make.top.equalTo(passwordField2.snp.bottom).offset(40)
             make.height.equalTo(50)
         }

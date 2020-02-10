@@ -25,7 +25,13 @@ class OnboardingViewController: StandardViewController {
     var questionLabel = standardLabel(text: "Çalışan mı arıyorsun?", size: 14.0, color: UIColorFromRGB(0x404259))
     var questionButton = UIButton()
     
-    var isEmployer: Bool = false
+    var isEmployer: Bool = false {
+        willSet {
+            testLabel.text = newValue ? "Employer Mode" : "Worker Mode"
+        }
+    }
+    
+    var testLabel = standardLabel(text: "Worker Mode", size: 16, color: .blue)
     
     override func viewDidLoad() {
         navigationController?.navigationBar.isHidden = true
@@ -112,6 +118,12 @@ class OnboardingViewController: StandardViewController {
         }
         
         setTitles()
+        
+        view.addSubview(testLabel)
+        testLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(view).offset(20)
+            make.top.equalTo(view).offset(40)
+        }
     }
     
     func setTitles() {
