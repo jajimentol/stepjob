@@ -89,8 +89,18 @@ class JobDetailViewController: UIViewController {
         jobImage.layer.cornerRadius = 4.0
         jobImage.clipsToBounds = true
         
+        if jobData?.isApplied ?? false {
+            submitButton.isUserInteractionEnabled = false
+            submitButton.setTitle("Başvuruldu", for: .normal)
+            submitButton.backgroundColor = UIColor.lightGray
+        }
+        
     }
     @IBAction func submitTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        WebService().applyForJob(jobId: jobData?.id ?? 0) { [weak self] (response, error) in
+            guard let strongSelf = self else { return }
+            strongSelf.navigationController?.popViewController(animated: true)
+        }
+        
     }
 }

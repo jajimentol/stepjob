@@ -33,50 +33,50 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jay-uv-She">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="738.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="733.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAW-jd-NPg">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="245"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="company" translatesAutoresizingMaskIntoConstraints="NO" id="DoT-xA-WjR">
-                                            <rect key="frame" x="16" y="77.5" width="90" height="90"/>
+                                            <rect key="frame" x="16" y="75" width="90" height="90"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="90" id="PAy-Rp-trs"/>
                                                 <constraint firstAttribute="width" constant="90" id="vs2-PG-TJK"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yazılım Geliştirme Elemanı" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abl-8n-QcO">
-                                            <rect key="frame" x="122" y="50" width="252" height="25.5"/>
+                                            <rect key="frame" x="122" y="40" width="252" height="25.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <color key="textColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROTA İNTERNET TEKNOLOJİ HİZMETLERİ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pr-1v-va8">
-                                            <rect key="frame" x="122" y="83.5" width="252" height="31.5"/>
+                                            <rect key="frame" x="122" y="73.5" width="252" height="31.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İstanbul(Asya)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9I-fu-QJZ">
-                                            <rect key="frame" x="122" y="120" width="262" height="18"/>
+                                            <rect key="frame" x="122" y="110" width="262" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Günlük" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWg-pa-wOo">
-                                            <rect key="frame" x="56" y="187.5" width="62" height="26"/>
+                                            <rect key="frame" x="56" y="206.5" width="62" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100₺" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cl-a3-OVO">
-                                            <rect key="frame" x="226" y="190" width="39" height="21"/>
+                                            <rect key="frame" x="226" y="207" width="39" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="Zze-fz-yvO">
-                                            <rect key="frame" x="194" y="189.5" width="22" height="22"/>
+                                            <rect key="frame" x="194" y="206.5" width="22" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="9ta-n7-h6T"/>
                                                 <constraint firstAttribute="width" constant="22" id="Lg0-NC-hkp"/>
@@ -95,26 +95,26 @@
                                         <constraint firstItem="i9I-fu-QJZ" firstAttribute="leading" secondItem="9Pr-1v-va8" secondAttribute="leading" id="8yf-UU-ze9"/>
                                         <constraint firstAttribute="trailing" secondItem="Abl-8n-QcO" secondAttribute="trailing" constant="40" id="Dgy-5p-R8X"/>
                                         <constraint firstItem="Abl-8n-QcO" firstAttribute="leading" secondItem="DoT-xA-WjR" secondAttribute="trailing" constant="16" id="Etz-6a-jwR"/>
-                                        <constraint firstItem="Abl-8n-QcO" firstAttribute="top" secondItem="xAW-jd-NPg" secondAttribute="top" constant="50" id="GCD-Nn-F4q"/>
+                                        <constraint firstItem="Abl-8n-QcO" firstAttribute="top" secondItem="xAW-jd-NPg" secondAttribute="top" constant="40" id="GCD-Nn-F4q"/>
                                         <constraint firstItem="Zze-fz-yvO" firstAttribute="centerY" secondItem="9Cl-a3-OVO" secondAttribute="centerY" id="KOC-8b-j0m"/>
-                                        <constraint firstAttribute="bottom" secondItem="TWg-pa-wOo" secondAttribute="bottom" constant="31.5" id="S9D-5J-8kp"/>
+                                        <constraint firstAttribute="bottom" secondItem="TWg-pa-wOo" secondAttribute="bottom" constant="12" id="S9D-5J-8kp"/>
+                                        <constraint firstItem="TWg-pa-wOo" firstAttribute="top" secondItem="DoT-xA-WjR" secondAttribute="bottom" constant="41.5" id="bf1-R1-fJp"/>
                                         <constraint firstItem="9Cl-a3-OVO" firstAttribute="leading" secondItem="Zze-fz-yvO" secondAttribute="trailing" constant="10" id="cbL-Jk-QXQ"/>
-                                        <constraint firstItem="TWg-pa-wOo" firstAttribute="top" secondItem="DoT-xA-WjR" secondAttribute="bottom" constant="20" id="ccw-pc-p0z"/>
-                                        <constraint firstAttribute="height" constant="245" id="geC-ox-lGJ"/>
+                                        <constraint firstAttribute="height" constant="240" id="geC-ox-lGJ"/>
                                         <constraint firstItem="9Pr-1v-va8" firstAttribute="top" secondItem="Abl-8n-QcO" secondAttribute="bottom" constant="8" id="hXe-Qc-3fe"/>
                                         <constraint firstAttribute="trailing" secondItem="i9I-fu-QJZ" secondAttribute="trailing" constant="30" id="sKj-Ua-eGh"/>
                                         <constraint firstItem="9Cl-a3-OVO" firstAttribute="centerY" secondItem="TWg-pa-wOo" secondAttribute="centerY" id="xQr-lT-hS2"/>
                                     </constraints>
                                 </view>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ye5-fO-mfR">
-                                    <rect key="frame" x="0.0" y="245" width="414" height="5"/>
+                                    <rect key="frame" x="0.0" y="240" width="414" height="5"/>
                                     <color key="backgroundColor" red="0.9882352941176471" green="0.27843137254901962" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="5" id="NZE-i2-cnH"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 gün önce yayınlandı" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQx-KK-CwH">
-                                    <rect key="frame" x="36" y="258" width="134.5" height="20"/>
+                                    <rect key="frame" x="36" y="253" width="134.5" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="ekK-64-rwV"/>
                                     </constraints>
@@ -123,39 +123,39 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 başvuru yapıldı" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9b8-KW-ncg">
-                                    <rect key="frame" x="243.5" y="260" width="134.5" height="16"/>
+                                    <rect key="frame" x="243.5" y="255" width="134.5" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tFf-Ym-8l0">
-                                    <rect key="frame" x="0.0" y="286" width="414" height="1"/>
+                                    <rect key="frame" x="0.0" y="281" width="414" height="1"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="Yiq-4S-sEt"/>
                                     </constraints>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xZJ-ER-rBl">
-                                    <rect key="frame" x="206.5" y="255" width="1" height="26"/>
+                                    <rect key="frame" x="206.5" y="250" width="1" height="26"/>
                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="1" id="yit-KS-bAM"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İş Tanımı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZB-dc-9nK">
-                                    <rect key="frame" x="16" y="299" width="63" height="18"/>
+                                    <rect key="frame" x="16" y="294" width="63" height="18"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENEL NİTELİKLER VE İŞ TANIMI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbH-vK-qnl">
-                                    <rect key="frame" x="16" y="333" width="386" height="21"/>
+                                    <rect key="frame" x="16" y="328" width="386" height="21"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XO8-cv-njy">
-                                    <rect key="frame" x="12" y="374" width="378" height="284.5"/>
+                                    <rect key="frame" x="12" y="369" width="378" height="284.5"/>
                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -168,7 +168,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJt-6a-1va">
-                                    <rect key="frame" x="354" y="200.5" width="44" height="44"/>
+                                    <rect key="frame" x="354" y="195.5" width="44" height="44"/>
                                     <color key="backgroundColor" red="0.98823529409999999" green="0.2784313725" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="8se-v9-zPR"/>

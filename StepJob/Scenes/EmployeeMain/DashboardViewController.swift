@@ -144,11 +144,10 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        if kind == UICollectionView.elementKindSectionHeader {
-//            let titleLabel = UILabel()
-//            titleLabel.text = "En Popüler İlanlar"
-//            return (titleLabel as! UICollectionReusableView)
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = JobDetailViewController(nibName: "JobDetailViewController", bundle: nil)
+        vc.jobData = topJobs?[indexPath.item]
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
