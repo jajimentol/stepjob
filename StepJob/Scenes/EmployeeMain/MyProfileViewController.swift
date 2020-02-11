@@ -44,15 +44,15 @@ class MyProfileViewController: UIViewController {
     
     func setInterface() {
         
-        let url = URL(string: workerUser?.profilePicture ?? "")
-        DispatchQueue.global().async {
-                if let data = try? Data(contentsOf: url!) {
-                DispatchQueue.main.async {
-                    self.userImage.image = UIImage(data: data)
+        if let url = URL(string: workerUser?.profilePicture ?? "") {
+            DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: url) {
+                    DispatchQueue.main.async {
+                        self.userImage.image = UIImage(data: data)
+                    }
                 }
             }
         }
-        
         userImage.layer.borderColor = UIColor.white.cgColor
         userImage.layer.borderWidth = 2.0
         userImage.layer.cornerRadius = 40.0
@@ -103,6 +103,10 @@ class MyProfileViewController: UIViewController {
         messageButton.layer.cornerRadius = 25.0
         confirmButton.layer.cornerRadius = 25.0
         callButton.layer.cornerRadius = 25.0
+    }
+    @IBAction func editTapped(_ sender: Any) {
+        let vc = EditProfileViewController(nibName: "EditProfileViewController", bundle: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

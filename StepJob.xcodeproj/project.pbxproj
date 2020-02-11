@@ -58,6 +58,8 @@
 		36810BD023D587A5008E416C /* EmployerProfileTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36810BCE23D587A4008E416C /* EmployerProfileTVC.xib */; };
 		3685950C23CCA3D300344273 /* WorkerRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3685950B23CCA3D300344273 /* WorkerRegisterRequest.swift */; };
 		3685951123CCA63200344273 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3685951023CCA63200344273 /* Worker.swift */; };
+		3696A3E823F2C66200751EDA /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3696A3E623F2C66200751EDA /* EditProfileViewController.swift */; };
+		3696A3E923F2C66200751EDA /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3696A3E723F2C66200751EDA /* EditProfileViewController.xib */; };
 		36ACC25723F1353D001A895A /* PopularJobCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ACC25523F1353D001A895A /* PopularJobCVC.swift */; };
 		36ACC25823F1353D001A895A /* PopularJobCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36ACC25623F1353D001A895A /* PopularJobCVC.xib */; };
 		36ACC25B23F15999001A895A /* MyJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ACC25923F15999001A895A /* MyJobsViewController.swift */; };
@@ -145,6 +147,8 @@
 		36810BCE23D587A4008E416C /* EmployerProfileTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployerProfileTVC.xib; sourceTree = "<group>"; };
 		3685950B23CCA3D300344273 /* WorkerRegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerRegisterRequest.swift; sourceTree = "<group>"; };
 		3685951023CCA63200344273 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
+		3696A3E623F2C66200751EDA /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		3696A3E723F2C66200751EDA /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		36ACC25523F1353D001A895A /* PopularJobCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularJobCVC.swift; sourceTree = "<group>"; };
 		36ACC25623F1353D001A895A /* PopularJobCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularJobCVC.xib; sourceTree = "<group>"; };
 		36ACC25923F15999001A895A /* MyJobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJobsViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 				36C27878235D8E6600A5B96F /* EmployeeMain */,
 				299DB115228EEB9700E2F321 /* Onboarding */,
 				299DB108228ED92600E2F321 /* Login-Register */,
+				3696A3E623F2C66200751EDA /* EditProfileViewController.swift */,
+				3696A3E723F2C66200751EDA /* EditProfileViewController.xib */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -533,6 +539,7 @@
 				36DCBCC923718381002322B7 /* GoogleService-Info.plist in Resources */,
 				299DB112228EE68500E2F321 /* LaunchScreen.storyboard in Resources */,
 				36ACC25C23F15999001A895A /* MyJobsViewController.xib in Resources */,
+				3696A3E923F2C66200751EDA /* EditProfileViewController.xib in Resources */,
 				36C60539236AF48D00B09526 /* EmployerDashboardTVC.xib in Resources */,
 				360991172353523800DA67C8 /* OnboardingImageCVC.xib in Resources */,
 				362C0E8B23605A00007D6E3C /* JobDetailViewController.xib in Resources */,
@@ -644,6 +651,7 @@
 				36C60531236AF2D300B09526 /* EmployerTabBarController.swift in Sources */,
 				36B2144523B20A28006D4397 /* CreateJobRequest.swift in Sources */,
 				36ACC25B23F15999001A895A /* MyJobsViewController.swift in Sources */,
+				3696A3E823F2C66200751EDA /* EditProfileViewController.swift in Sources */,
 				36B0DCF8239E746F00E88FDB /* SingleLabelCVC.swift in Sources */,
 				36B0DCF3239E4E2100E88FDB /* RadioChoiceView.swift in Sources */,
 				360BC3FA2393BEE900D7BA5C /* SelfMessageTVC.swift in Sources */,
@@ -792,7 +800,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = BRWSX9WG52;
 				INFOPLIST_FILE = StepJob/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -800,7 +808,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaji.StepJob;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -816,7 +824,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = BRWSX9WG52;
 				INFOPLIST_FILE = StepJob/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -824,7 +832,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaji.StepJob;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "StepJob Ad Hoc";

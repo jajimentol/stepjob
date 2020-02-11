@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StepJob.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>B364EEAB12FE8EF6E2DC0D06BAF6B55B40249CE1</string>
+				<key>dateExpires</key>
+				<string>23.10.2020</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B364EEAB12FE8EF6E2DC0D06BAF6B55B40249CE1</string>
+						<key>dateExpires</key>
+						<string>23.10.2020</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>Alamofire.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>BRWSX9WG52</string>
+						<key>name</key>
+						<string>Anil Turan</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B364EEAB12FE8EF6E2DC0D06BAF6B55B40249CE1</string>
+						<key>dateExpires</key>
+						<string>23.10.2020</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>GTMSessionFetcher.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>BRWSX9WG52</string>
+						<key>name</key>
+						<string>Anil Turan</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B364EEAB12FE8EF6E2DC0D06BAF6B55B40249CE1</string>
+						<key>dateExpires</key>
+						<string>23.10.2020</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>GoogleUtilities.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>BRWSX9WG52</string>
+						<key>name</key>
+						<string>Anil Turan</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B364EEAB12FE8EF6E2DC0D06BAF6B55B40249CE1</string>
+						<key>dateExpires</key>
+						<string>23.10.2020</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>IQKeyboardManagerSwift.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>BRWSX9WG52</string>
+						<key>name</key>
+						<string>Anil Turan</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B364EEAB12FE8EF6E2DC0D06BAF6B55B40249CE1</string>
+						<key>dateExpires</key>
+						<string>23.10.2020</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>ObjectMapper.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>BRWSX9WG52</string>
+						<key>name</key>
+						<string>Anil Turan</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B364EEAB12FE8EF6E2DC0D06BAF6B55B40249CE1</string>
+						<key>dateExpires</key>
+						<string>23.10.2020</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>SVProgressHUD.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>BRWSX9WG52</string>
+						<key>name</key>
+						<string>Anil Turan</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B364EEAB12FE8EF6E2DC0D06BAF6B55B40249CE1</string>
+						<key>dateExpires</key>
+						<string>23.10.2020</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>SnapKit.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>BRWSX9WG52</string>
+						<key>name</key>
+						<string>Anil Turan</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B364EEAB12FE8EF6E2DC0D06BAF6B55B40249CE1</string>
+						<key>dateExpires</key>
+						<string>23.10.2020</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>nanopb.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>BRWSX9WG52</string>
+						<key>name</key>
+						<string>Anil Turan</string>
+					</dict>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>BRWSX9WG52.com.jaji.StepJob</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>BRWSX9WG52</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>BRWSX9WG52.com.jaji.StepJob</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>StepJob.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>48124241-d3c9-48a7-b3af-69f51bbf3ff5</string>
+				<key>name</key>
+				<string>StepJob Ad Hoc</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>BRWSX9WG52</string>
+				<key>name</key>
+				<string>Anil Turan</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
