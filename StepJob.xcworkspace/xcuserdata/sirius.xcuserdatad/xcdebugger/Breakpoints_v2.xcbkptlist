@@ -36,5 +36,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A45E426A-1F27-4F27-A05C-45B00EBCCF85"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StepJob/Scenes/EmployeeMain/Detail/JobDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getJobDetail()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A45E426A-1F27-4F27-A05C-45B00EBCCF85 - b77219be16ded7e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StepJob.JobDetailViewController.getJobDetail() -&gt; ()"
+                  moduleName = "StepJob"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sirius/Documents/GitHub/stepjob/StepJob/Scenes/EmployeeMain/Detail/JobDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "A45E426A-1F27-4F27-A05C-45B00EBCCF85 - ad2d457a93ee3222"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, Swift.Bool) -&gt; () in StepJob.JobDetailViewController.getJobDetail() -&gt; ()"
+                  moduleName = "StepJob"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sirius/Documents/GitHub/stepjob/StepJob/Scenes/EmployeeMain/Detail/JobDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "188">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D09AFB39-3045-40D9-A087-1A8881389954"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StepJob/Scenes/EmployerMain/EmployerJobDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

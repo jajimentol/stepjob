@@ -10,26 +10,39 @@ import UIKit
 
 class EmployerDashboardTVC: UITableViewCell {
 
-    @IBOutlet weak var adLabel: UILabel!
+    @IBOutlet weak var jobNameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    
-    @IBOutlet weak var approvedLabel: UILabel!
-    @IBOutlet weak var applicationLabel: UILabel!
-    @IBOutlet weak var seenLabel: UILabel!
+    @IBOutlet weak var jobTypeLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    
+    @IBOutlet weak var rightButton: UIButton!
+    
+    func fillCell(with job: Job) {
+        
         selectionStyle = .none
-    }
-
-    func fillAd(with job: Job) {
-        adLabel.text = job.title
+        jobNameLabel.text = job.title
         locationLabel.text = job.location
-        approvedLabel.text = String(job.jobApplyCount ?? 0) + " Onaylanan"
-        applicationLabel.text = String(job.waitingJobApplies?.count ?? 0) + " Başvuru"
+        jobTypeLabel.text = job.jobType
         timeLabel.text = job.creationDate
-        typeLabel.text = job.jobType
+        rightButton.layer.borderWidth = 1.0
+        rightButton.layer.cornerRadius = 10.0
+        rightButton.setTitleColor(.darkGray, for: .normal)
+        
+        if job.jobApplyCount ?? 0 > 0 {
+            let applies = String(job.jobApplyCount ?? 0) + " başvuru"
+            rightButton.setTitle(applies, for: .normal)
+            rightButton.layer.borderColor = UIColor.cyan.cgColor
+            if #available(iOS 13.0, *) {
+                rightButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
+            } else {
+            }
+            rightButton.tintColor = UIColor.cyan
+        } else {
+            rightButton.setTitle("Başvuru yok", for: .normal)
+            rightButton.setImage(nil, for: .normal)
+            rightButton.layer.borderColor = UIColor.lightGray.cgColor
+            rightButton.tintColor = UIColor.lightGray
+        }
         
     }
 }

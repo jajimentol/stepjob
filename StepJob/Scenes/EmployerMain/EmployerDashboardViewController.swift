@@ -75,12 +75,20 @@ extension EmployerDashboardViewController: UITableViewDelegate, UITableViewDataS
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EmployerDashboardTVC", for: indexPath) as! EmployerDashboardTVC
-            if jobs != nil && (jobs?.count ?? 0 > indexPath.row) {
-                cell.fillAd(with: (jobs?[indexPath.row])!)
+            if jobs != nil && (jobs?.count ?? 0 > indexPath.row),
+                let job = jobs?[indexPath.row] {
+                cell.fillCell(with: job)
             }
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 1 {
+            return "Aktif İlanlar"
+        }
+        return nil
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

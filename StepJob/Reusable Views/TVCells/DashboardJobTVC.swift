@@ -26,11 +26,12 @@ class DashboardJobTVC: UITableViewCell {
     
     func fillCell(with job: Job) {
         
-        let url = URL(string: job.employer?.profilePicture ?? "")
-        DispatchQueue.global().async {
-                if let data = try? Data(contentsOf: url!) {
-                DispatchQueue.main.async {
-                    self.jobImage.image = UIImage(data: data)
+        if let url = URL(string: job.employer?.profilePicture ?? "") {
+            DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: url) {
+                    DispatchQueue.main.async {
+                        self.jobImage.image = UIImage(data: data)
+                    }
                 }
             }
         }

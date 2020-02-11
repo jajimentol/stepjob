@@ -42,11 +42,22 @@ class JobDetailViewController: UIViewController {
     }
     
     func getJobDetail() {
-        WebService().getWorkerJobDetail(jobId: jobData?.id ?? 0) { [weak self] (response, error) in
-            guard let strongSelf = self else { return }
-            if !error, let job = Mapper<Job>().map(JSON: response) {
-                strongSelf.jobData = job
-                strongSelf.setInterface()
+        if !(isUserEmployer ?? false) {
+            WebService().getWorkerJobDetail(jobId: jobData?.id ?? 0) { [weak self] (response, error) in
+                guard let strongSelf = self else { return }
+                if !error, let job = Mapper<Job>().map(JSON: response) {
+                    strongSelf.jobData = job
+                    strongSelf.setInterface()
+                }
+            }
+        } else {
+            WebService().getJobDetail(jobId: jobData?.id ?? 0) { [weak self] (response, error) in
+                
+                guard let strongSelf = self else { return }
+                if !error, let job = Mapper<Job>().map(JSON: response) {
+                    strongSelf.jobData = job
+                    strongSelf.setInterface()
+                }
             }
         }
     }
@@ -67,11 +78,12 @@ class JobDetailViewController: UIViewController {
     
     func fillScene() {
         
-        let url = URL(string: jobData?.employer?.profilePicture ?? "")
-        DispatchQueue.global().async {
-                if let data = try? Data(contentsOf: url!) {
-                DispatchQueue.main.async {
-                    self.jobImage.image = UIImage(data: data)
+        if let url = URL(string: jobData?.employer?.profilePicture ?? "") {
+            DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: url) {
+                    DispatchQueue.main.async {
+                        self.jobImage.image = UIImage(data: data)
+                    }
                 }
             }
         }

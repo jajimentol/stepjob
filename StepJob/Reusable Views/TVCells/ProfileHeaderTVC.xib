@@ -20,7 +20,7 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="listheader" translatesAutoresizingMaskIntoConstraints="NO" id="C5v-FN-tEJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="Ogr-wB-KQC">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="Ogr-wB-KQC">
                         <rect key="frame" x="163.5" y="20" width="48" height="48"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -97,6 +97,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="activeAdsLabel" destination="kuo-3d-Tfz" id="G7B-LL-oqy"/>
+                <outlet property="companyImage" destination="Ogr-wB-KQC" id="upc-sN-DgY"/>
                 <outlet property="nameLabel" destination="OYW-rd-YcR" id="duu-iA-R4d"/>
                 <outlet property="passiveAdsLabel" destination="m4G-VU-GYW" id="3hV-Ch-fJe"/>
             </connections>
