@@ -100,5 +100,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "95DF1D03-CD4A-4E85-B914-99862303DB8C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StepJob/Reusable Views/TVCells/DashboardJobTVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "fillCell(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "95DF1D03-CD4A-4E85-B914-99862303DB8C - 5e7e25e17422cc24"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StepJob.DashboardJobTVC.fillCell(with: StepJob.Job) -&gt; ()"
+                  moduleName = "StepJob"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sirius/Documents/GitHub/stepjob/StepJob/Reusable%20Views/TVCells/DashboardJobTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "436">
+               </Location>
+               <Location
+                  uuid = "95DF1D03-CD4A-4E85-B914-99862303DB8C - c0472d6fd6dc9c30"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in StepJob.DashboardJobTVC.fillCell(with: StepJob.Job) -&gt; ()"
+                  moduleName = "StepJob"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sirius/Documents/GitHub/stepjob/StepJob/Reusable%20Views/TVCells/DashboardJobTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "180">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

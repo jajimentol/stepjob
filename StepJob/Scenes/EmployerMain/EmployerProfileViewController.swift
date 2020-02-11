@@ -26,6 +26,7 @@ class EmployerProfileViewController: StandardViewController {
         tableView.register(UINib(nibName: "DashboardJobTVC", bundle: nil), forCellReuseIdentifier: "DashboardJobTVC")
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         
         getMe()
     }
@@ -65,6 +66,11 @@ extension EmployerProfileViewController: UITableViewDelegate, UITableViewDataSou
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 1 { return "Aktif İlanlar" }
+        else { return nil }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

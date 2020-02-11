@@ -97,6 +97,8 @@ class Job: Mappable {
         approvedJobs    <- map["approvedJobs"]
         jobDates    <- map["jobDates"]
         
+        
+        
     }
     
 }

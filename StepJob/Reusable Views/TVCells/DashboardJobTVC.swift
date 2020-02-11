@@ -34,6 +34,14 @@ class DashboardJobTVC: UITableViewCell {
                     }
                 }
             }
+        } else if isUserEmployer ?? false, let url = URL(string: employerUser?.profilePicture ?? "") {
+            DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: url) {
+                    DispatchQueue.main.async {
+                        self.jobImage.image = UIImage(data: data)
+                    }
+                }
+            }
         }
         
         jobLabel.text = job.title
